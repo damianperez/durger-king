@@ -6,6 +6,8 @@ use Longman\TelegramBot\Entities\ServerResponse;
 use Longman\TelegramBot\Entities\UserProfilePhotos;
 use Longman\TelegramBot\Exception\TelegramException;
 use Longman\TelegramBot\Request;
+use Longman\TelegramBot\Entities\InlineKeyboard;
+
 class StartCommand extends UserCommand
 {
     protected $name = 'Start';
@@ -27,6 +29,20 @@ class StartCommand extends UserCommand
  //           'reply_to_message_id' => $message_id,
             'parse_mode' => 'HTML',
         ];
+
+
+
+            Request::sendMessage([
+                'chat_id' => $message->getChat()->getId(),
+                'parse_mode' => ParseMode::MARKDOWN,
+                'text' => "*Let's get started* 🍟 \n\nPlease tap the button below to order your perfect lunch!",
+                'reply_markup' => InlineKeyboard::make()->setKeyboard([
+                    [
+                        InlineKeyboardButton::make('Order Food')->setWebApp('https://bots.perezcompany.com.ar/durger-king/public'),
+                    ]
+                ])
+            ]);
+
 
         // Send chat action "typing..."
         Request::sendChatAction([
