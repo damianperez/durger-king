@@ -11,7 +11,7 @@ use Utilities\Routing\Response;
 use Utilities\Routing\Utils\StatusCode;
 
 /**
- * Class WebService
+ * Class WebService 
  *
  * The Class will handle the requests for the WebApp.
  *
