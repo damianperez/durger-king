@@ -328,7 +328,8 @@ var Cafe = {
                 onCallback && onCallback(result);
             },
             error: function (xhr) {
-                onCallback && onCallback({ error: "Server error" });
+                 console.log('Problem with request:', method);
+		 onCallback && onCallback({ error:  xhr.status + " " + xhr.statusText});
             },
         });
     },
