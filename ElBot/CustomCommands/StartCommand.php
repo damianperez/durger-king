@@ -34,7 +34,7 @@ class StartCommand extends UserCommand
 
             Request::sendMessage([
                 'chat_id' => $message->getChat()->getId(),
-                'parse_mode' => ParseMode::MARKDOWN,
+                'parse_mode' => 'HTML', //ParseMode::MARKDOWN,
                 'text' => "*Let's get started* 🍟 \n\nPlease tap the button below to order your perfect lunch!",
                 'reply_markup' => InlineKeyboard::make()->setKeyboard([
                     [
