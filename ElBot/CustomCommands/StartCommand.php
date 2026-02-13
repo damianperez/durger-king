@@ -34,7 +34,8 @@ class StartCommand extends UserCommand
         ];
 
          // Create the keyboard buttons
-        $button1 = new InlineKeyboardButton(['text' => 'Option A', 'web_app' => 'https://bots.perezcompany.com.ar/durger-king/public']);
+          
+        $button1 = new InlineKeyboardButton(['text' => 'Option A', 'web_app' => ['url' =>'https://bots.perezcompany.com.ar/durger-king/public']]);
         $button2 = new InlineKeyboardButton(['text' => 'Option B', 'callback_data' => 'option_B']);
 
         // Create the inline keyboard and add a row of buttons
