@@ -531,9 +531,10 @@
 <script src="https://tg.dev/js/jquery.min.js"></script>
 <script src="https://tg.dev/js/tgsticker.js?27"></script>
 <script src="js/cafe.js?version=<?php echo uniqid() ?>"></script>
+
 <script>
-    Cafe.init({
-        "apiUrl": "<?php echo $_ENV['REMOTE_PATH'] . '/ElBot' ?>",
+    Cafe.init({        
+		"apiUrl": "https://bots.perezcompany.com.ar/durger-king/ElBot",
         "userId": 0,
         "userHash": null
     });
