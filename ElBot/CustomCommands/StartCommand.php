@@ -36,16 +36,19 @@ class StartCommand extends UserCommand
             'parse_mode' => 'HTML',
         ];
 
+         // Create the keyboard buttons
+        $button1 = new InlineKeyboardButton(['text' => 'Option A', 'url' => 'https://bots.perezcompany.com.ar/durger-king/public']);
+        $button2 = new InlineKeyboardButton(['text' => 'Option B', 'callback_data' => 'option_B']);
+
+        // Create the inline keyboard and add a row of buttons
+        $inline_keyboard = new InlineKeyboard($button1, $button2);
+
 
             Request::sendMessage([
                 'chat_id' => $message->getChat()->getId(),
                 'parse_mode' => 'HTML', //ParseMode::MARKDOWN,
                 'text' => "*Let's get started* 🍟 \n\nPlease tap the button below to order your perfect lunch!",
-                'reply_markup' => InlineKeyboard::make()->setKeyboard([
-                    [
-                        InlineKeyboardButton::make('Order Food')->setWebApp('https://bots.perezcompany.com.ar/durger-king/public'),
-                    ]
-                ])
+                'reply_markup' => $inline_keyboard,
             ]);
 
 
