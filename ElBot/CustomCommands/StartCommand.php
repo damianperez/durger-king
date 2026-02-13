@@ -38,7 +38,7 @@ class StartCommand extends UserCommand
         $button2 = new InlineKeyboardButton(['text' => 'Option B', 'callback_data' => 'option_B']);
 
         // Create the inline keyboard and add a row of buttons
-        $inline_keyboard = new InlineKeyboard($button1, $button2);
+       
         $inline_keyboard = new InlineKeyboard([
             ['text' => 'Inline Query (current chat)', 'switch_inline_query_current_chat' => 'inline query...'],
             ['text' => 'Inline Query (other chat)', 'switch_inline_query' => 'inline query...'],
@@ -46,7 +46,7 @@ class StartCommand extends UserCommand
             ['text' => 'Callback', 'callback_data' => 'identifier'],
             ['text' => 'Open URL', 'url' => 'https://github.com/php-telegram-bot/example-bot'],
         ]);
-
+        $inline_keyboard = new InlineKeyboard($button1, $button2);
             Request::sendMessage([
                 'chat_id' => $message->getChat()->getId(),
                 'parse_mode' => 'HTML', //ParseMode::MARKDOWN,
