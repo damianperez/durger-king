@@ -34,18 +34,12 @@ class StartCommand extends UserCommand
         ];
 
          // Create the keyboard buttons
-        $button1 = new InlineKeyboardButton(['text' => 'Option A', 'url' => 'https://bots.perezcompany.com.ar/durger-king/public']);
+        $button1 = new InlineKeyboardButton(['text' => 'Option A', 'web_app' => 'https://bots.perezcompany.com.ar/durger-king/public']);
         $button2 = new InlineKeyboardButton(['text' => 'Option B', 'callback_data' => 'option_B']);
 
         // Create the inline keyboard and add a row of buttons
        
-        $inline_keyboard = new InlineKeyboard([
-            ['text' => 'Inline Query (current chat)', 'switch_inline_query_current_chat' => 'inline query...'],
-            ['text' => 'Inline Query (other chat)', 'switch_inline_query' => 'inline query...'],
-        ], [
-            ['text' => 'Callback', 'callback_data' => 'identifier'],
-            ['text' => 'Open APP', 'web_app' => 'https://github.com/php-telegram-bot/example-bot'],
-        ]);
+        
         $inline_keyboard = new InlineKeyboard($button1, $button2);
             Request::sendMessage([
                 'chat_id' => $message->getChat()->getId(),
@@ -54,6 +48,7 @@ class StartCommand extends UserCommand
                 'reply_markup' => $inline_keyboard,
             ]);
 
+        return Request::emptyResponse();
         // Send chat action "typing..."
         Request::sendChatAction([
             'chat_id' => $chat_id,
