@@ -7,9 +7,6 @@ use Longman\TelegramBot\Entities\UserProfilePhotos;
 use Longman\TelegramBot\Exception\TelegramException;
 use Longman\TelegramBot\Request;
 use Longman\TelegramBot\Entities\InlineKeyboard;
-use TelegramBot\Entities\InlineKeyboardButton;
-use TelegramBot\Entities\WebAppData;
-use TelegramBot\Enums\ParseMode;
 
 use Utilities\Routing\Response;
 use Utilities\Routing\Utils\StatusCode;
@@ -50,7 +47,6 @@ class StartCommand extends UserCommand
                 'text' => "*Let's get started* 🍟 \n\nPlease tap the button below to order your perfect lunch!",
                 'reply_markup' => $inline_keyboard,
             ]);
-
 
         // Send chat action "typing..."
         Request::sendChatAction([
