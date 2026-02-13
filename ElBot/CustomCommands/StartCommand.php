@@ -7,7 +7,6 @@ use Longman\TelegramBot\Entities\UserProfilePhotos;
 use Longman\TelegramBot\Exception\TelegramException;
 use Longman\TelegramBot\Request;
 use Longman\TelegramBot\Entities\InlineKeyboard;
-
 use Utilities\Routing\Response;
 use Utilities\Routing\Utils\StatusCode;
 
@@ -26,7 +25,6 @@ class StartCommand extends UserCommand
         $user_id    = $from->getId();
         $chat_id    = $message->getChat()->getId();
         $message_id = $message->getMessageId();
-
         $data = [
             'chat_id'             => $chat_id,
  //           'reply_to_message_id' => $message_id,
