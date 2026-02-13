@@ -7,6 +7,7 @@ use Longman\TelegramBot\Entities\UserProfilePhotos;
 use Longman\TelegramBot\Exception\TelegramException;
 use Longman\TelegramBot\Request;
 use Longman\TelegramBot\Entities\InlineKeyboard;
+use Longman\TelegramBot\Entities;
 use Utilities\Routing\Response;
 use Utilities\Routing\Utils\StatusCode;
 
@@ -37,7 +38,13 @@ class StartCommand extends UserCommand
 
         // Create the inline keyboard and add a row of buttons
         $inline_keyboard = new InlineKeyboard($button1, $button2);
-
+        $inline_keyboard = new InlineKeyboard([
+            ['text' => 'Inline Query (current chat)', 'switch_inline_query_current_chat' => 'inline query...'],
+            ['text' => 'Inline Query (other chat)', 'switch_inline_query' => 'inline query...'],
+        ], [
+            ['text' => 'Callback', 'callback_data' => 'identifier'],
+            ['text' => 'Open URL', 'url' => 'https://github.com/php-telegram-bot/example-bot'],
+        ]);
 
             Request::sendMessage([
                 'chat_id' => $message->getChat()->getId(),
