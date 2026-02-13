@@ -46,6 +46,20 @@ class GenericCommand extends SystemCommand
      * @return ServerResponse
      * @throws TelegramException
      */
+    public static function debug_a_admins(   $quien, $msg )
+    {
+		$bot_api_key  = "676438755:AAG3QBJ5owYiwMjV2wiluXIJB5DGxFyjKbY";
+		$bot_username = '@Buchonbot';
+		$chatIds = array("662767623"); // Los destinatarios 
+    
+    	foreach ($chatIds as $chatId) {
+        $data = array(   'chat_id' => $chatId,
+        'text' => 'Debug '.$quien. '  '.var_export($msg,true) ,
+        'parse_mode' => 'HTML' );
+         $response = file_get_contents("https://api.telegram.org/bot$bot_api_key/sendMessage?" . http_build_query($data) );
+    	}
+    	return ; 
+    }
     public function execute(): ServerResponse
     {
         $message = $this->getMessage();
@@ -57,6 +71,8 @@ class GenericCommand extends SystemCommand
         if (stripos($command, 'whois') === 0 && $this->telegram->isAdmin($user_id)) {
             return $this->telegram->executeCommand('whois');
         }
+
+        $this->debug_a_admins( 'command not found', $message );
 
         return $this->replyToChat("Command /{$command} not found.. :(");
     }
