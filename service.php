@@ -16,6 +16,10 @@ Router::resource("{$_ENV['REMOTE_URI']}/public", __DIR__ . '/public');
 
 Router::resource("{$_ENV['REMOTE_URI']}/ElBot", __DIR__ . '/ElBot');
 
+Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
+    $TgBot = require __DIR__ . '/ElBot/hook.php';
+    Response::send(StatusCode::OK, 'Bot is working...');
+});
 /*
 Router::any("{$_ENV['REMOTE_URI']}/telegram", __DIR__ . '/ElBot');
 
