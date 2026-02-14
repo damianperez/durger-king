@@ -7,7 +7,8 @@ use Utilities\Routing\Utils\StatusCode;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = require __DIR__ . '/ElBot/config.php';
+
+
 
 ini_set('display_errors', '1');
 error_reporting(E_ALL);
@@ -23,6 +24,7 @@ Router::resource("{$_ENV['REMOTE_URI']}/ElBot", __DIR__ . '/ElBot');
 Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
    try {
         // Create Telegram API object
+        $config = require __DIR__ . '/ElBot/config.php';
         $telegram = new Longman\TelegramBot\Telegram($config['api_key'], $config['bot_username']);
 
         // Enable admin users
