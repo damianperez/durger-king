@@ -39,6 +39,7 @@
 	<button onclick="DemoApp.expand();">Expand Webview</button>
 	<button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
 	<input type="text" placeholder="Regular field">
+	<div id="idofdiv"></div>
 	<div class="input" contenteditable="true" data-placeholder="Contenteditable field"></div>
 	<div id="peer_wrap" style="display:none">
 		<img id="peer_photo" class="chat_img" src="https://webappcontent.telegram.org/demo?mode=menu">
