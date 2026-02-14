@@ -39,7 +39,7 @@
 	<button onclick="DemoApp.expand();">Expand Webview</button>
 	<button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
 	<input type="text" placeholder="Regular field">
-	<div id="idofdiv"></div>
+	
 	<div class="input" contenteditable="true" data-placeholder="Contenteditable field"></div>
 	<div id="peer_wrap" style="display:none">
 		<img id="peer_photo" class="chat_img" src="https://webappcontent.telegram.org/demo?mode=menu">
@@ -97,6 +97,7 @@
 			<li><a href="javascript:;" onclick="DemoApp.showPopup();">showPopup</a></li>
 		</ul>
 	</div>
+	
 	<p>Haptics:</p>
 	<ul>
 		<li>Impact: <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred(&#39;heavy&#39;);">heavy</a>,
@@ -114,6 +115,11 @@
 		<li>Selection: <a href="javascript:Telegram.WebApp.HapticFeedback.selectionChanged();">changed</a><br><br></li>
 	</ul>
 	<pre><code id="webview_data">{}</code></pre>
+	<div class="hint">
+	<p>Damian</p>
+	<div id="idofdiv">Data</div>
+	</div>
+
 	<div class="hint">
 		Data passed to webview.
 		<span id="webview_data_status" class="status_need">Checking hash...</span>
