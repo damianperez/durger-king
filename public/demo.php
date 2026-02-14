@@ -115,10 +115,11 @@
 		<li>Selection: <a href="javascript:Telegram.WebApp.HapticFeedback.selectionChanged();">changed</a><br><br></li>
 	</ul>
 	<pre><code id="webview_data">{}</code></pre>
-	<div class="hint">
+	
 	<p>Damian</p>
-	<div id="idofdiv">Data</div>
-	</div>
+	<pre><code id="idofdiv">{}</code></pre>
+	
+	
 
 	<div class="hint">
 		Data passed to webview.
