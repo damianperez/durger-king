@@ -319,8 +319,8 @@ var Cafe = {
         var authData = Telegram.WebApp.initData || "";
         $.ajax(Cafe.apiUrl, {
             type: "POST",
-            //data: JSON.stringify($.extend(data, { _auth: authData, method: method })),
-            data: $.extend(data, { _auth: authData, method: method }),
+            data: JSON.stringify($.extend(data, { _auth: authData, method: method })),
+            //data: $.extend(data, { _auth: authData, method: method }),
             dataType: "json",
             xhrFields: {
                 withCredentials: true,
@@ -329,7 +329,7 @@ var Cafe = {
                 onCallback && onCallback(result);
             },
             error: function (xhr) {
-                 console.log('Problema with request:', method);
+                 console.log('Problemas with request:', method);
                  console.log(xhr);
                  console.log(xhr.status);
                  console.log(xhr.statusText);
