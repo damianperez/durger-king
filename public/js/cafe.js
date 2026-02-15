@@ -331,9 +331,8 @@ var Cafe = {
             },
             error: function (xhr) {
                  console.log('Problemas with request:', method);
-                 console.log(xhr);
-                 console.log(xhr.status);
-                 console.log(xhr.statusText);
+                 console.log('Hhr:',xhr);
+                 
 		 onCallback && onCallback({ error:  xhr.status + " " + xhr.statusText});
             },
         });
