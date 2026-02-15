@@ -146,8 +146,10 @@ var DemoApp = {
         const basePath = window.location.pathname.split('/').slice(0, -3).join('/');
         $('#idofdiv').html(data);
         console.log(window.location.pathname);
-        console.log(window.location.pathname.split('/'));
-        console.log(window.location.pathname.split('/').slice(0,-3));
+        console.log(window.location.pathname.split('/').join('/'));
+        console.log(window.location.pathname.split('/').slice(0,-3).join('/'));
+        console.log(window.location.pathname.split('/').slice(0,-2).join('/'));
+        console.log(window.location.pathname.split('/').slice(0,-1).join('/'));
         console.log(basePath);
         //alert(data.serialize());
         //$.ajax(`${basePath}/telegram`, {
