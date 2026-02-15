@@ -26,7 +26,7 @@ class App extends \TelegramBot\UpdateHandler {
    public function __process(Update $update): void {
 
       //Telegram::setAdminId($_ENV['ADMIN_CHAT_ID']);
-      die( var_dump($update));
+      //die( var_dump($update));
       Telegram::setAdminId(662767623);
 
       if ($update->getMessage()->getText() === '/ping') {
