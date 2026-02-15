@@ -144,7 +144,7 @@ var DemoApp = {
         const authData = DemoApp.initData || '';
         const basePath = window.location.pathname.split('/').slice(0, -3).join('/');
         $('#idofdiv').html(data);
-        alert(data.serialize());
+        //alert(data.serialize());
         //$.ajax(`${basePath}/telegram`, {
         $.ajax(`${basePath}/ElBot`, {
         
