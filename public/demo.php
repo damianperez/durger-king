@@ -31,10 +31,9 @@
 </head>
 <body class="" style="--bg-color:undefined" data-new-gr-c-s-check-loaded="14.1079.0" data-gr-ext-installed="">
 <section id="top_sect" class="second">
-	<button id="main_btn" onclick="DemoApp.sendMessage(&#39;&#39;);" style="display: none;">Send «Hello, World!»
+	<button id="main_btn2" onclick="DemoApp.sendMessage(&#39;&#39;);" style="display: none;">Send «Hello, World!»
 	</button>
-	<button id="main_btn" onclick="DemoApp.sendMessage(&#39;Hello!&#39;);" style="display: none;">Send «Hello, World!»		
-		
+	<button id="main_btn" onclick="DemoApp.sendMessage(&#39;Hello!&#39;);" style="display: none;">Send 2 «Hello, World!»				
 	</button>
 	<button id="with_webview_btn" onclick="DemoApp.sendMessage(&#39;&#39;, true);" style="display: none;">Send «Hello,
 		World!» with inline webview button
