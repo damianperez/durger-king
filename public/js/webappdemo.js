@@ -142,16 +142,7 @@ var DemoApp = {
 
     apiRequest: function (method, data, onCallback) {
         const authData = DemoApp.initData || '';
-        const relative = 'durger-king';
-        const basePath = window.location.pathname.split('/').slice(0, -2).join('/');
-        $('#idofdiv').html(data);
-        console.log(window.location.pathname);
-        console.log(window.location.pathname.split('/').join('/'));
-        console.log('-3'+window.location.pathname.split('/').slice(0,-3).join('/'));
-        console.log('-2'+window.location.pathname.split('/').slice(0,-2).join('/'));
-        console.log('-1'+window.location.pathname.split('/').slice(0,-1).join('/'));
-        console.log('basePath'+basePath);
-        //alert(data.serialize());
+        const basePath = window.location.pathname.split('/').slice(0, -3).join('/');
         $.ajax(`${basePath}/telegram`, {
             type: 'POST',
             data: $.extend(data, {_auth: authData, method: method}),
@@ -163,7 +154,7 @@ var DemoApp = {
                 onCallback && onCallback(result);
             },
             error: function (xhr) {
-                onCallback && onCallback({error: 'Server error webappd'});
+                onCallback && onCallback({error: 'Server error'});
             }
         });
     }

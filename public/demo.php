@@ -31,9 +31,7 @@
 </head>
 <body class="" style="--bg-color:undefined" data-new-gr-c-s-check-loaded="14.1079.0" data-gr-ext-installed="">
 <section id="top_sect" class="second">
-	<button id="main_btn2" onclick="DemoApp.sendMessage(&#39;&#39;);" style="display: none;">Send «Hello, World!»
-	</button>
-	<button id="main_btn" onclick="DemoApp.sendMessage(&#39;Hello!&#39;);" style="display: none;">Send 2 «Hello, World!»				
+	<button id="main_btn" onclick="DemoApp.sendMessage(&#39;&#39;);" style="display: none;">Send «Hello, World!»
 	</button>
 	<button id="with_webview_btn" onclick="DemoApp.sendMessage(&#39;&#39;, true);" style="display: none;">Send «Hello,
 		World!» with inline webview button
@@ -41,7 +39,6 @@
 	<button onclick="DemoApp.expand();">Expand Webview</button>
 	<button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
 	<input type="text" placeholder="Regular field">
-	
 	<div class="input" contenteditable="true" data-placeholder="Contenteditable field"></div>
 	<div id="peer_wrap" style="display:none">
 		<img id="peer_photo" class="chat_img" src="https://webappcontent.telegram.org/demo?mode=menu">
@@ -99,7 +96,6 @@
 			<li><a href="javascript:;" onclick="DemoApp.showPopup();">showPopup</a></li>
 		</ul>
 	</div>
-	
 	<p>Haptics:</p>
 	<ul>
 		<li>Impact: <a href="javascript:Telegram.WebApp.HapticFeedback.impactOccurred(&#39;heavy&#39;);">heavy</a>,
@@ -117,12 +113,6 @@
 		<li>Selection: <a href="javascript:Telegram.WebApp.HapticFeedback.selectionChanged();">changed</a><br><br></li>
 	</ul>
 	<pre><code id="webview_data">{}</code></pre>
-	
-	<p>Damian</p>
-	<pre><code id="idofdiv">{}</code></pre>
-	
-	
-
 	<div class="hint">
 		Data passed to webview.
 		<span id="webview_data_status" class="status_need">Checking hash...</span>
