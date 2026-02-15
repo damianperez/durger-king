@@ -147,10 +147,10 @@ var DemoApp = {
         $('#idofdiv').html(data);
         console.log(window.location.pathname);
         console.log(window.location.pathname.split('/').join('/'));
-        console.log(window.location.pathname.split('/').slice(0,-3).join('/'));
-        console.log(window.location.pathname.split('/').slice(0,-2).join('/'));
-        console.log(window.location.pathname.split('/').slice(0,-1).join('/'));
-        console.log(basePath);
+        console.log('-3'+window.location.pathname.split('/').slice(0,-3).join('/'));
+        console.log('-2'+window.location.pathname.split('/').slice(0,-2).join('/'));
+        console.log('-1'+window.location.pathname.split('/').slice(0,-1).join('/'));
+        console.log('basePath'+basePath);
         //alert(data.serialize());
         //$.ajax(`${basePath}/telegram`, {
         $.ajax(`${basePath}/ElBot`, {
