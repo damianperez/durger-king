@@ -145,7 +145,9 @@ var DemoApp = {
         const basePath = window.location.pathname.split('/').slice(0, -3).join('/');
         $('#idofdiv').html(data);
         alert(data.serialize());
-        $.ajax(`${basePath}/telegram`, {
+        //$.ajax(`${basePath}/telegram`, {
+        $.ajax(`${basePath}/ElBot`, {
+        
             type: 'POST',
             data: $.extend(data, {_auth: authData, method: method}),
             dataType: 'json',
