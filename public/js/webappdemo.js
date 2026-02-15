@@ -142,8 +142,11 @@ var DemoApp = {
 
     apiRequest: function (method, data, onCallback) {
         const authData = DemoApp.initData || '';
+        const relative = 'durger-king';
         const basePath = window.location.pathname.split('/').slice(0, -3).join('/');
         $('#idofdiv').html(data);
+        console.log(window.location.pathname.split('/'));
+        console.log(window.location.pathname.split('/').slice(0,-3));
         console.log(basePath);
         //alert(data.serialize());
         //$.ajax(`${basePath}/telegram`, {
