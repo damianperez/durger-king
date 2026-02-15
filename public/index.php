@@ -534,7 +534,7 @@
 
 <script>
     Cafe.init({        
-		"apiUrl": "https://bots.perezcompany.com.ar/durger-king/ElBot",
+		"apiUrl": "https://bots.perezcompany.com.ar/durger-king/telegram",
         "userId": 0,
         "userHash": null
     });
