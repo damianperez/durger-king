@@ -145,6 +145,7 @@ var DemoApp = {
         const relative = 'durger-king';
         const basePath = window.location.pathname.split('/').slice(0, -3).join('/');
         $('#idofdiv').html(data);
+        console.log(window.location.pathname);
         console.log(window.location.pathname.split('/'));
         console.log(window.location.pathname.split('/').slice(0,-3));
         console.log(basePath);
