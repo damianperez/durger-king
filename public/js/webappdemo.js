@@ -150,15 +150,18 @@ var DemoApp = {
     console.log(jsonConvertedData); 
         $.ajax(`${basePath}/telegram`, {
             type: 'POST',
-            data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
+            data: $.extend(data, {_auth: authData, method: method}),
+            //data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
             dataType: 'json',
             xhrFields: {
                 withCredentials: true
             },
             success: function (result) {
+                console.log(result);
                 onCallback && onCallback(result);
             },
             error: function (xhr) {
+                console.log(xhr);
                 onCallback && onCallback({error: 'Server error xhr'});
             }
         });
