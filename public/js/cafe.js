@@ -317,6 +317,8 @@ var Cafe = {
     },
     apiRequest: function (method, data, onCallback) {
         var authData = Telegram.WebApp.initData || "";
+        console.log('enviado a ',Cafe.apiUrl);
+        console.log("Data enviada", $.extend(data, { _auth: authData, method: method }) ),
         $.ajax(Cafe.apiUrl, {
             type: "POST",
             data: $.extend(data, { _auth: authData, method: method }),
@@ -327,9 +329,14 @@ var Cafe = {
             success: function (result) {
                 onCallback && onCallback(result);
             },
-            error: function (xhr) {
-                onCallback && onCallback({ error: "Server error" });
-            },
+            error: function(xhr, textStatus, errorThrown) {
+            // Code to run on error
+                console.log("Error:", errorThrown);
+                console.log("Error:", textStatus);
+                console.log(xhr);
+                onCallback && onCallback({error: 'Server error xhr'});
+            }
+            
         });
     },
 };
