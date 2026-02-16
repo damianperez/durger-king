@@ -41,7 +41,7 @@ class WebService extends \TelegramBot\Plugin
                     "Your order will be delivered to you in 30 minutes. 🚚",
             ]);
 
-            Response::send(StatusCode::OK,['listo'=>'elpollo']);
+            Response::send(StatusCode::OK);
             //public static function send(int $statusCode, string|array $body = []): void
             
         }
@@ -67,7 +67,7 @@ class WebService extends \TelegramBot\Plugin
                 ])
             ]);
 
-            Response::send(StatusCode::OK,['listo'=>'elMensaje']);
+            Response::send(StatusCode::OK);
             //Response::send(StatusCode::OK);
         }
     }
