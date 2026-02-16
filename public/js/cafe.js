@@ -328,15 +328,13 @@ var Cafe = {
             xhrFields: {
                 withCredentials: true,
             },
-            success: function (result) {
-                console.log('Result:'+result);
+            success: function (result) {                
                 onCallback && onCallback(result);
             },
             error: function (xhr) {
-                 console.log('Problemas with request:', method);
-                 console.log('Hhr:',xhr);
-                 
-		 onCallback && onCallback({ error:  xhr.status + " " + xhr.statusText});
+                console.log('Problemas with request:', method);
+                console.log('Hhr:',xhr);
+		        onCallback && onCallback({ error:  xhr.status + " " + xhr.statusText});
             },
         });
     },
