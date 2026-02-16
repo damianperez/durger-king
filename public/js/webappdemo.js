@@ -160,7 +160,10 @@ var DemoApp = {
                 console.log(result);
                 onCallback && onCallback(result);
             },
-            error: function (xhr) {
+            error: function(xhr, textStatus, errorThrown) {
+            // Code to run on error
+                console.log("Error:", errorThrown);
+                console.log("Error:", textStatus);
                 console.log(xhr);
                 onCallback && onCallback({error: 'Server error xhr'});
             }
