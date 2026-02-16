@@ -151,7 +151,7 @@ var DemoApp = {
         $.ajax(`${basePath}/telegram`, {
             type: 'POST',
             data: $.extend(data, {_auth: authData, method: method}),
-            //data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
+            data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
             dataType: 'json',
             xhrFields: {
                 withCredentials: true
