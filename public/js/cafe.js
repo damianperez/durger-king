@@ -317,10 +317,13 @@ var Cafe = {
     },
     apiRequest: function (method, data, onCallback) {
         var authData = Telegram.WebApp.initData || "";
+        console.log('enviado a ',`${basePath}/telegram`);
+        console.log('method ',method);
+        console.log("Data enviada", data ),
         $.ajax(Cafe.apiUrl, {
             type: "POST",
-            data: JSON.stringify($.extend(data, { _auth: authData, method: method })),
-            //data: $.extend(data, { _auth: authData, method: method }),
+            //data: JSON.stringify($.extend(data, { _auth: authData, method: method })),
+            data: $.extend(data, { _auth: authData, method: method }),
             dataType: "json",
             xhrFields: {
                 withCredentials: true,
@@ -338,7 +341,10 @@ var Cafe = {
         });
     },
 };
-
+/*
+La orden paga devuelve:
+{"ok":true,"invoice_url":"https:\/\/t.me\/$UO5dIr-woEgsFAAANz5mgZrCrGs"}
+*/
 /*!
     Autosize 3.0.20
     license: MIT
