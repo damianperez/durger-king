@@ -32,8 +32,7 @@ class WebService extends \TelegramBot\Plugin
         if ($webAppData->getRawData()['method'] == "makeOrder") {
             header('Content-Type: application/json');
 
-	    //yield 
-	    Request::sendMessage([
+	    yield Request::sendMessage([
                 'chat_id' => $webAppData->getUser()->getId(),
                 'parse_mode' => ParseMode::MARKDOWN,
                 'text' => "Your order has been placed successfully! 🍟" . "\n\n" .
@@ -41,7 +40,7 @@ class WebService extends \TelegramBot\Plugin
                     "Your order will be delivered to you in 30 minutes. 🚚",
             ]);
 
-            Response::send(StatusCode::OK);
+            Response::send(StatusCode::OK,['listo'=>'elpollo']);
             //public static function send(int $statusCode, string|array $body = []): void
             
         }
