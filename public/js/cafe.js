@@ -335,7 +335,7 @@ var Cafe = {
                 console.log("Error:", errorThrown);
                 console.log("Error:", textStatus);
                 console.log(xhr);
-                onCallback && onCallback({error: 'Server error ',errorThrown});
+                onCallback && onCallback({error: errorThrown});
             }
             
         });
