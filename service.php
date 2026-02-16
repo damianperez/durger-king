@@ -18,7 +18,8 @@ Router::resource("{$_ENV['REMOTE_URI']}/public", __DIR__ . '/public');
 
 Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
     (new App())->resolve();
-    Response::send(StatusCode::OK, 'Bot is working...');
+    
+    Response::send(StatusCode::OK, ['aa'=>'Bot is working...']);
 });
 
 Router::any("{$_ENV['REMOTE_URI']}", function () {
