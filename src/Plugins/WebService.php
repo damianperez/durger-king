@@ -41,7 +41,9 @@ class WebService extends \TelegramBot\Plugin
                     "Your order will be delivered to you in 30 minutes. 🚚",
             ]);
 
-            Response::send(StatusCode::OK);
+            Response::send(StatusCode::OK,['listo'=>'elpollo']);
+            //public static function send(int $statusCode, string|array $body = []): void
+            
         }
 
         if ($webAppData->getRawData()['method'] == "checkInitData") {
