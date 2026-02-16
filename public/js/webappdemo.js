@@ -143,19 +143,20 @@ var DemoApp = {
     apiRequest: function (method, data, onCallback) {
         const authData = DemoApp.initData || '';
         const basePath = window.location.pathname.split('/').slice(0, -2).join('/');
-        console.log(`${basePath}/telegram`);
-        console.log($.extend(data, {_auth: authData, method: method}));
+        
+        //console.log($.extend(data, {_auth: authData, method: method}));
         var jsonConvertedData = JSON.stringify($.extend(data, {_auth: authData, method: method}));
-
-    console.log(jsonConvertedData); 
+        //console.log(jsonConvertedData); 
+        console.log('enviado a ',`${basePath}/telegram`);
+        console.log("Data enviada", data ),
         $.ajax(`${basePath}/telegram`, {
             type: 'POST',
             data: $.extend(data, {_auth: authData, method: method}),
            // data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
-            dataType: 'json',
+            dataType: 'json',            
             xhrFields: {
                 withCredentials: true
-            },
+            },            
             success: function (result) {
                 console.log(result);
                 onCallback && onCallback(result);
