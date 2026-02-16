@@ -67,7 +67,8 @@ class WebService extends \TelegramBot\Plugin
                 ])
             ]);
 
-            Response::send(StatusCode::OK);
+            Response::send(StatusCode::OK,['listo'=>'elMensaje']);
+            //Response::send(StatusCode::OK);
         }
     }
 
