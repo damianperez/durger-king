@@ -7,6 +7,7 @@
 var Cafe = {
   canPay: false,
   modeOrder: false,
+  mode:'inline',
   totalPrice: 0,
 
   init: function(options) {
