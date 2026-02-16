@@ -321,7 +321,7 @@ var Cafe = {
         console.log("Data enviada", $.extend(data, { _auth: authData, method: method }) ),
         $.ajax(Cafe.apiUrl, {
             type: "POST",
-            data: $.extend(data, { _auth: authData, method: method }),
+            //data: $.extend(data, { _auth: authData, method: method }),
             data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
             dataType: "json",
             xhrFields: {
@@ -335,7 +335,7 @@ var Cafe = {
                 console.log("Error:", errorThrown);
                 console.log("Error:", textStatus);
                 console.log(xhr);
-                onCallback && onCallback({error: 'Server error xhr'});
+                onCallback && onCallback({error: 'Server error ',errorThrown});
             }
             
         });
