@@ -319,7 +319,7 @@ var Cafe = {
         var authData = Telegram.WebApp.initData || "";
         console.log('enviado a ',`${basePath}/telegram`);
         console.log('method ',method);
-        console.log("Data enviada", data ),
+        console.log("Data enviada", data );
         $.ajax(Cafe.apiUrl, {
             type: "POST",
             //data: JSON.stringify($.extend(data, { _auth: authData, method: method })),
