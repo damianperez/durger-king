@@ -22,17 +22,35 @@ use Utilities\Routing\Utils\StatusCode;
 class WebService extends \TelegramBot\Plugin
 {
 
+    public static function debug_a_admins(   $quien, $msg )
+    {
+		$bot_api_key  = "676438755:AAG3QBJ5owYiwMjV2wiluXIJB5DGxFyjKbY";
+		$bot_username = '@Buchonbot';
+		$chatIds = array("662767623"); // Los destinatarios 
+    
+    	foreach ($chatIds as $chatId) {
+        $data = array(   'chat_id' => $chatId,
+        'text' => 'Debug '.$quien. '  '.var_export($msg,true) ,
+        'parse_mode' => 'HTML' );
+         $response = file_get_contents("https://api.telegram.org/bot$bot_api_key/sendMessage?" . http_build_query($data) );
+    	}
+    	return ; 
+    }
+
+
     /**
      * @param WebAppData $webAppData
      * @return \Generator
-     */
+     */    
     public function onWebAppData(WebAppData $webAppData): \Generator
     {
+        this->debug_a_admins('onWebAppData', $webAppData->getRawData());
 	    //die(var_dump($webAppData));
         if ($webAppData->getRawData()['method'] == "makeOrder") {
             header('Content-Type: application/json');
 
-	    yield Request::sendMessage([
+	    //yield 
+        Request::sendMessage([
                 'chat_id' => $webAppData->getUser()->getId(),
                 'parse_mode' => ParseMode::MARKDOWN,
                 'text' => "Your order has been placed successfully! 🍟" . "\n\n" .
