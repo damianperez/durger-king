@@ -300,6 +300,9 @@ var Cafe = {
           } else if (Cafe.mode == 'link') {
             Cafe.showStatus('switching inline query');
             Telegram.WebApp.switchInlineQuery('#' + result.order_id, ['users', 'groups']);
+          } else if (Cafe.mode == 'nose') {
+            Cafe.showStatus('switching inline query');
+            Telegram.WebApp.sendData('#' + result.order_id, ['nose']);
           } else if (invoiceSupported) {
             alert(result.invoice_url);
             Telegram.WebApp.openInvoice(result.invoice_url, function(status) {
