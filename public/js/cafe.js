@@ -293,10 +293,12 @@ var Cafe = {
       Cafe.toggleLoading(true);
       Cafe.apiRequest('makeOrder', params, function(result) {
         Cafe.toggleLoading(false);
+        alert('Anduvo');
         if (result.ok) {
           if (Cafe.mode == 'inline') {
             Telegram.WebApp.switchInlineQuery('#' + result.order_id);
           } else if (Cafe.mode == 'link') {
+            Cafe.showStatus('switching inline query');
             Telegram.WebApp.switchInlineQuery('#' + result.order_id, ['users', 'groups']);
           } else if (invoiceSupported) {
             Telegram.WebApp.openInvoice(result.invoice_url, function(status) {
