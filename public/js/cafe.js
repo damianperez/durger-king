@@ -398,6 +398,7 @@ var Cafe = {
         withCredentials: true
       },
       success: function(result) {
+        console.log('resultado del post ',result);
         onCallback && onCallback(result);
       },
      error: function(xhr, textStatus, errorThrown) {
