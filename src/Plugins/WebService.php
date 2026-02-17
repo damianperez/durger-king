@@ -49,8 +49,7 @@ class WebService extends \TelegramBot\Plugin
         if ($webAppData->getRawData()['method'] == "makeOrder") {
             header('Content-Type: application/json');
 
-	    //yield 
-        Request::sendMessage([
+	    yield Request::sendMessage([
                 'chat_id' => $webAppData->getUser()->getId(),
                 'parse_mode' => ParseMode::MARKDOWN,
                 'text' => "Your order has been placed successfully! 🍟" . "\n\n" .

@@ -77,16 +77,7 @@ class Commands extends \TelegramBot\Plugin
                     "/test - Test the web app\n" .
                     "/help - Show this help page"
             ]);
-	}
-	if ($message->getText() == '/makeOrder') {
-            yield Request::sendMessage([
-                'chat_id' => $message->getChat()->getId(),
-                'text' => "Estas x hacer una orden\n\n" .
-                    "aaaa  \n" .
-                    "aaaa  \n" .
-                    "/help - Show this help page"
-            ]);
-        }
+	    }	    
     }
 
 }
