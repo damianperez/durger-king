@@ -301,6 +301,7 @@ var Cafe = {
             Cafe.showStatus('switching inline query');
             Telegram.WebApp.switchInlineQuery('#' + result.order_id, ['users', 'groups']);
           } else if (invoiceSupported) {
+            alert(result.invoice_url);
             Telegram.WebApp.openInvoice(result.invoice_url, function(status) {
               if (status == 'paid') {
                 Telegram.WebApp.close();
