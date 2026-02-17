@@ -12,16 +12,13 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-
 Router::resource("{$_ENV['REMOTE_URI']}/public", __DIR__ . '/public');
 Router::resource("{$_ENV['REMOTE_URI']}/ElBot", __DIR__ . '/ElBot');
-
 Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
-    (new App())->resolve();
+    Response::send( (new App())->resolve());
    // Response::send(StatusCode::OK);
-    Response::send(StatusCode::OK, ['service.php'=>'Bot is working...']);
+    //Response::send(StatusCode::OK, ['service.php'=>'Bot is working...']);
 });
-
 Router::any("{$_ENV['REMOTE_URI']}", function () {
     echo "Ready to serve...";
 });
