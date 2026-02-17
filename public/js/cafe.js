@@ -293,6 +293,7 @@ var Cafe = {
       Cafe.toggleLoading(true);
       Cafe.apiRequest('makeOrder', params, function(result) {
         Cafe.toggleLoading(false);
+        console.log('resultado del makeOrder ',result);  
         alert('Anduvo');
         if (result.ok) {
           if (Cafe.mode == 'inline') {
