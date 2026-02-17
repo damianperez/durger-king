@@ -5,7 +5,6 @@ namespace ShahradElahi\DurgerKing;
 use TelegramBot\Entities\Update;
 use TelegramBot\Request;
 use TelegramBot\Telegram;
-
 /**
  * Class App
  *
@@ -49,6 +48,9 @@ class App extends \TelegramBot\UpdateHandler {
             'text' => '`Pong!`',
          ]);
       }
+      if ( $update->getMessage()->getWebAppData()) {
+        $this->debug_a_admins('App esWebAppData', $update->getMessage()->getWebAppData()->getRawData());
+      }
 
       self::addPlugins([
          Plugins\WebService::class,
@@ -58,3 +60,26 @@ class App extends \TelegramBot\UpdateHandler {
    }
 
 }
+/*
+        // List of service messages previously handled internally.
+        $service_message_getters = [
+            'newchatmembers'        => 'getNewChatMembers',
+            'leftchatmember'        => 'getLeftChatMember',
+            'newchattitle'          => 'getNewChatTitle',
+            'newchatphoto'          => 'getNewChatPhoto',
+            'deletechatphoto'       => 'getDeleteChatPhoto',
+            'groupchatcreated'      => 'getGroupChatCreated',
+            'supergroupchatcreated' => 'getSupergroupChatCreated',
+            'channelchatcreated'    => 'getChannelChatCreated',
+            'migratefromchatid'     => 'getMigrateFromChatId',
+            'migratetochatid'       => 'getMigrateToChatId',
+            'pinnedmessage'         => 'getPinnedMessage',
+            'successfulpayment'     => 'getSuccessfulPayment',
+        ];
+
+        foreach ($service_message_getters as $command => $service_message_getter) {
+            // Let's check if this message is a service message.
+            if ($message->$service_message_getter() === null) {
+                continue;
+            }
+                */
