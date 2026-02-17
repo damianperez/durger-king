@@ -15,7 +15,7 @@ $dotenv->load();
 Router::resource("{$_ENV['REMOTE_URI']}/public", __DIR__ . '/public');
 Router::resource("{$_ENV['REMOTE_URI']}/ElBot", __DIR__ . '/ElBot');
 Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
-    Response::send( (new App())->resolve());
+    Response::send(StatusCode::OK (new App())->resolve());
    // Response::send(StatusCode::OK);
     //Response::send(StatusCode::OK, ['service.php'=>'Bot is working...']);
 });
