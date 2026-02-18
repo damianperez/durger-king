@@ -533,9 +533,15 @@
 <script src="js/cafe.js?version=<?php echo uniqid() ?>"></script>
 
 <script>
+	/*
+	inline button
+	menu button
+	inline mode
+	direct link
+	*/
     Cafe.init({        
 		"apiUrl": "https://bots.perezcompany.com.ar/durger-king/telegram",
-		"mode":"nose",		
+		"mode":"inline",		
 		//"mode":"menu",
         "userId": 0,
         "userHash": null
