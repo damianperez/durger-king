@@ -535,6 +535,7 @@
 <script>
 	/*
 	inline button
+		From the button, a Mini App will open with the URL specified in the button. In addition to the user's theme settings, it will receive basic user information (ID, name, username, language_code) and a unique identifier for the session, query_id, which allows messages on behalf of the user to be sent back to the bot.
 	menu button
 	inline mode
 	direct link
