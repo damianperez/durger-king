@@ -148,7 +148,7 @@ var DemoApp = {
         var jsonConvertedData = JSON.stringify($.extend(data, {_auth: authData, method: method}));
         //console.log(jsonConvertedData); 
         console.log('enviado a ',`${basePath}/telegram`);
-        console.log("Data enviada", data ),
+        console.log("Data enviada ", data ),
         $.ajax(`${basePath}/telegram`, {
             type: 'POST',
             data: $.extend(data, {_auth: authData, method: method}),
@@ -164,10 +164,10 @@ var DemoApp = {
             error: function(xhr, textStatus, errorThrown) {
             // Code to run on error
 
-                console.log("Error:", errorThrown);
-                console.log("Error:", textStatus);
+                console.log("ErrorThrown:", errorThrown);
+                console.log("Errortextstatus:", textStatus);
                 console.log("Data enviada:", data);
-                console.log("Xhr:", xhr);                
+                console.log("El Xhr:", xhr);                
                 onCallback && onCallback({error: 'Server demo error xhr'});
             }
         });
