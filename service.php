@@ -14,12 +14,9 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 Router::resource("{$_ENV['REMOTE_URI']}/public", __DIR__ . '/public');
 Router::resource("{$_ENV['REMOTE_URI']}/ElBot", __DIR__ . '/ElBot');
-Router::resource("{$_ENV['REMOTE_URI']}/telegram", function () {
-    //Response::send(StatusCode::OK, (new App())->resolve());
-    //(new App())->resolve();
-    //Response::send(StatusCode::OK);
-   // Response::send(StatusCode::OK);
-    Response::send(StatusCode::OK, ['service.php'=>'Bot is working...']);
+Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
+    (new App())->resolve();
+    Response::send(StatusCode::OK, 'Bot is working...');
 });
 Router::any("{$_ENV['REMOTE_URI']}", function () {
     echo "Ready to serve...";
