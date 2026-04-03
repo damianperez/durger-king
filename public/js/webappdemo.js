@@ -166,7 +166,7 @@ var DemoApp = {
 
                 console.log("Error:", errorThrown);
                 console.log("Error:", textStatus);
-                console.log("Data enciada:", data);
+               // console.log("Data enciada:", data);
                 console.log(xhr);
                 onCallback && onCallback({error: 'Server demo error xhr'});
             }
