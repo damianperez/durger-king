@@ -166,8 +166,8 @@ var DemoApp = {
 
                 console.log("Error:", errorThrown);
                 console.log("Error:", textStatus);
-               // console.log("Data enciada:", data);
-                console.log(xhr);
+                console.log("Data enviada:", data);
+                console.log("Xhr:", xhr);                
                 onCallback && onCallback({error: 'Server demo error xhr'});
             }
         });
