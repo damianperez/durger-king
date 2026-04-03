@@ -293,7 +293,9 @@ var Cafe = {
       Cafe.apiRequest('makeOrder', params, function(result) {
         Cafe.toggleLoading(false);
         console.log('resultado del makeOrder ',result);  
-        alert('Anduvo');
+        console.log('mode ',Cafe.mode); 
+        console.log('invoiceSupported ',invoiceSupported);  
+        console.log('userId ',Cafe.userId);
         if (result.ok) {
           if (Cafe.mode == 'inline') {
             Telegram.WebApp.switchInlineQuery('#' + result.order_id);
