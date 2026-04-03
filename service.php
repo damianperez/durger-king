@@ -12,7 +12,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-Router::resource("{$_ENV['REMOTE_URI']}/public", __DIR__ . '/public');
+Router::resource("{$_ENV['REMOTE_URI']}", __DIR__ . '/public');
+#Router::resource("{$_ENV['REMOTE_URI']}/public", __DIR__ . '/public');
 Router::resource("{$_ENV['REMOTE_URI']}/ElBot", __DIR__ . '/ElBot');
 
 Router::any("/durger-king/public/telegram", function () {
