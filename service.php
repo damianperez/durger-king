@@ -18,6 +18,11 @@ Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
     (new App())->resolve();
     Response::send(StatusCode::OK, 'Bot is working...');
 });
+Router::any("{$_ENV['REMOTE_URI']}/public/telegram", function () {
+    (new App())->resolve();
+    Response::send(StatusCode::OK, 'Bot is working...');
+});
+
 Router::any("{$_ENV['REMOTE_URI']}", function () {
     echo "Ready to serve...";
 });
