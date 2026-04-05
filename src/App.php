@@ -48,11 +48,9 @@ class App extends \TelegramBot\UpdateHandler {
             'parse_mode' => 'Markdown',
             'text' => '`Ponga!`',
          ]);
-      }
-       
-
-      if ( $update->getRawData()['method']=='makeOrder') { 
-         yield Request::sendMessage([
+      } elseif ( $update->getRawData()['method']==='makeOrder') 
+      { 
+          Request::sendMessage([
                         'chat_id' => $update->getMessage()->getChat()->getId(),
                         'parse_mode' => 'Markdown',
                         'text' => "Your order has been placed successfully! 🍟"
@@ -61,7 +59,10 @@ class App extends \TelegramBot\UpdateHandler {
                         "ok"=> true,
                         "invoice_url" => "https://t.me/$NG4UvISlmUpdIwAAFps900FiGKM"
                     ]);
+          
       }
+
+       
 
 
 
