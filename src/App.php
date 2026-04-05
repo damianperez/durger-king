@@ -45,12 +45,12 @@ class App extends \TelegramBot\UpdateHandler {
          Request::sendMessage([
             'chat_id' => $update->getMessage()->getChat()->getId(),
             'parse_mode' => 'Markdown',
-            'text' => '`Pong!`',
+            'text' => '`Ponga!`',
          ]);
       }
        
       $this->debug_a_admins('Invoice', $update->getMessage()->getInvoice());
-      $this->debug_a_admins('WebAppData', $update->getMessage()->getWebAppData());
+      //$this->debug_a_admins('WebAppData', $update->getMessage()->getWebAppData());
       if ( $update->getMessage()->getWebAppData()) {
         $this->debug_a_admins('App esWebAppData', $update->getMessage()->getWebAppData()->getRawData());
       }
