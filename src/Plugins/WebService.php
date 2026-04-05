@@ -57,7 +57,8 @@ class WebService extends \TelegramBot\Plugin
     public function onWebAppData(WebAppData $webAppData): \Generator
     {
         $this->debug_a_admins('onWebAppData', $webAppData->getRawData());
-	    //die(var_dump($webAppData));
+	    //
+        // die(var_dump($webAppData));
         if ($webAppData->getRawData()['method'] == "makeOrder") {
             header('Content-Type: application/json');
 
@@ -70,7 +71,10 @@ class WebService extends \TelegramBot\Plugin
                     "Your order will be delivered to you in 30 minutes. 🚚",
             ]);
 
-            Response::send(StatusCode::OK,['listo'=>'elpollo']);
+            Response::send(StatusCode::OK,[
+                        "ok"=> true,
+                        "invoice_url" => "https://t.me/$NG4UvISlmUpdIwAAFps900FiGKM"
+                    ]);
             //public static function send(int $statusCode, string|array $body = []): void
             
         }

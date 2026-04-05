@@ -390,6 +390,7 @@ var Cafe = {
     clearTimeout(Cafe.statusTo);
     $('.js-status').removeClass('shown');
   },
+
   apiRequest: function(method, data, onCallback) {
     var authData = Telegram.WebApp.initData || '';
     console.log('enviado a ',Cafe.apiUrl);
@@ -408,6 +409,11 @@ var Cafe = {
       },
      error: function(xhr, textStatus, errorThrown) {
             // Code to run on error
+            /*
+              {
+              "ok": true,
+              "invoice_url": "https://t.me/$NG4UvISlmUpdIwAAFps900FiGKM"
+            }             */
                 console.log("errorThrown:", errorThrown);
                 console.log("textStatus:", textStatus);
                 console.log("xhr:", xhr);
