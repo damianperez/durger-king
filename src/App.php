@@ -50,6 +50,23 @@ class App extends \TelegramBot\UpdateHandler {
          ]);
       }
        
+
+      if ( $update->getRawData()['method']=='makeOrder') { 
+         yield Request::sendMessage([
+                        'chat_id' => $update->getMessage()->getChat()->getId(),
+                        'parse_mode' => 'Markdown',
+                        'text' => "Your order has been placed successfully! 🍟"
+                    ]);
+         Response::send(StatusCode::OK,[
+                        "ok"=> true,
+                        "invoice_url" => "https://t.me/$NG4UvISlmUpdIwAAFps900FiGKM"
+                    ]);
+      }
+
+
+
+
+
       $this->debug_a_admins('Invoice', $update->getMessage()->getInvoice());
       //$this->debug_a_admins('WebAppData', $update->getMessage()->getWebAppData());
       if ( $update->getMessage()->getWebAppData()) {
