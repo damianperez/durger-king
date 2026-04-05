@@ -408,9 +408,9 @@ var Cafe = {
       },
      error: function(xhr, textStatus, errorThrown) {
             // Code to run on error
-                console.log("Error:", errorThrown);
-                console.log("Error:", textStatus);
-                console.log(xhr);
+                console.log("errorThrown:", errorThrown);
+                console.log("textStatus:", textStatus);
+                console.log("xhr:", xhr);
                 onCallback && onCallback({error: 'Server error xhr'});
             }
     });

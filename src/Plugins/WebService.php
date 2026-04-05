@@ -42,7 +42,8 @@ class WebService extends \TelegramBot\Plugin
      * @param WebAppData $webAppData
      * @return \Generator
      * 
-     * EL invoice y el WebAppData llegan por separado, no se si es un bug o es asi, pero el invoice llega con el mensaje y el WebAppData llega despues, 
+     * EL invoice y el WebAppData llegan por separado, no se si es un bug o es asi, pero el invoice llega con el mensaje y 
+     * el WebAppData llega despues, 
      * por eso los debug para ver que llega primero
      * Esto deberia devolver el makeOrder     * 
      *  {"ok":true,"invoice_url":"https:\/\/t.me\/$Nv6DVyQXoUjsEwAA-fIZSx-Ohn4"}
