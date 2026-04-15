@@ -305,7 +305,7 @@ var Cafe = {
             Telegram.WebApp.switchInlineQuery('#' + result.order_id, ['users', 'groups']);
           } else if (Cafe.mode == 'menu') {
             Cafe.showStatus('Mandando un SendData');
-            Telegram.WebApp.sendData('#' + result.order_id, ['nose']);
+            Telegram.WebApp.sendData('#' + result.order_id, ['menu']);
           } else if (invoiceSupported) {
             alert(result.invoice_url);
             Telegram.WebApp.openInvoice(result.invoice_url, function(status) {
