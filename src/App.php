@@ -58,7 +58,7 @@ class App extends \TelegramBot\UpdateHandler {
             'parse_mode' => 'Markdown',
             'text' => '`Ponga!`',
          ]);
-      } elseif ( $RAW=>method =='makeOrder') 
+      } elseif ( $RAW->method =='makeOrder') 
       { 
           Request::sendMessage([
                         'chat_id' => $update->getMessage()->getChat()->getId(),
