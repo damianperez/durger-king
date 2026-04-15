@@ -539,10 +539,14 @@
 	menu button
 	inline mode
 	direct link
+
+	Cafe.init({"apiUrl":"\/cafe\/api","mode":"menu","userId":0,"userHash":null});<
+	//"mode":"inline",		
 	*/
+	<script>
+	
     Cafe.init({        
-		"apiUrl": "https://bots.perezcompany.com.ar/durger-king/telegram",
-		//"mode":"inline",		
+		"apiUrl": "https://bots.perezcompany.com.ar/durger-king/telegram",		
 		"mode":"menu",
         "userId": 0,
         "userHash": null
