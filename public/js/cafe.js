@@ -21,6 +21,7 @@ var Cafe = {
     if ((!Telegram.WebApp.initDataUnsafe ||
          !Telegram.WebApp.initDataUnsafe.query_id) &&
         Cafe.mode != 'inline' &&
+        Cafe.mode != 'menu' &&
         Cafe.mode != 'link') {
       Cafe.isClosed = true;
       $('body').addClass('closed');
