@@ -15,11 +15,15 @@ $dotenv->load();
 
 Router::resource("{$_ENV['REMOTE_URI']}/public", __DIR__ . '/public');
 
-Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
+Router::any("{$_ENV['REMOTE_URI']}/telegrama", function () {
     (new App())->resolve();
     Response::send(StatusCode::OK, 'Bot is working...');
 });
-Router::any("{$_ENV['REMOTE_URI']}/telegrama", function () {
+Router::any("{$_ENV['REMOTE_URI']}/telegramo", function () {
+    (new App())->resolve();
+    Response::send(StatusCode::OK, 'Bot is working...');
+});
+Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
     
         
      $result['ok'] = true;
