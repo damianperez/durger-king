@@ -16,7 +16,12 @@ $dotenv->load();
 Router::resource("{$_ENV['REMOTE_URI']}/public", __DIR__ . '/public');
 
 Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
-    //(new App())->resolve();
+    (new App())->resolve();
+    Response::send(StatusCode::OK, 'Bot is working...');
+});
+Router::any("{$_ENV['REMOTE_URI']}/telegrama", function () {
+    
+        
      $result['ok'] = true;
      $result['coin']=15200;   
      $result["invoice_url"] = "https://t.me/$Nv6DVyQXoUjsEwAA-fIZSx-Ohn4";
@@ -26,6 +31,7 @@ Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
     //echo json_encode($result);
 
     Response::send(StatusCode::OK, $result );
+    
 });
 
 Router::any("{$_ENV['REMOTE_URI']}", function () {
