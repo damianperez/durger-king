@@ -542,8 +542,8 @@
 	*/
     Cafe.init({        
 		"apiUrl": "https://bots.perezcompany.com.ar/durger-king/telegram",
-		"mode":"inline",		
-		//"mode":"menu",
+		//"mode":"inline",		
+		"mode":"menu",
         "userId": 0,
         "userHash": null
     });

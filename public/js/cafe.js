@@ -302,7 +302,7 @@ var Cafe = {
           } else if (Cafe.mode == 'link') {
             Cafe.showStatus('switching inline query');
             Telegram.WebApp.switchInlineQuery('#' + result.order_id, ['users', 'groups']);
-          } else if (Cafe.mode == 'nose') {
+          } else if (Cafe.mode == 'menu') {
             Cafe.showStatus('Mandando un SendData');
             Telegram.WebApp.sendData('#' + result.order_id, ['nose']);
           } else if (invoiceSupported) {
