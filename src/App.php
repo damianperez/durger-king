@@ -36,9 +36,7 @@ class App extends \TelegramBot\UpdateHandler {
     	}
     	return ; 
     }
-   public function __process(Update $update): void {
-      //Telegram::setAdminId($_ENV['ADMIN_CHAT_ID']);
-      //die( var_dump($update));
+   public function __process(Update $update): void {      
 /* RAW
 'order_data' => '[{"id":2,"count":5}]',
   'comment' => '',
