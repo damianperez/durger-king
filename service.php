@@ -24,7 +24,7 @@ Router::any("{$_ENV['REMOTE_URI']}/telegramo", function () {
     Response::send(StatusCode::OK, 'Bot is working...');
 });
 Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
-    
+    /* Con esto al menos no da error, aunque no se si es lo que se espera... */
         
      $result['ok'] = true;
      $result['coin']=15200;   
