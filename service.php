@@ -19,6 +19,7 @@ Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
     //(new App())->resolve();
      $result['ok'] = true;
      $result['coin']=15200;   
+     $result["invoice_url"] = "https://t.me/$Nv6DVyQXoUjsEwAA-fIZSx-Ohn4";
      $result['message']='Bot is working...en'.$_ENV['REMOTE_URI'];
 
     header('Content-type: application/json');
