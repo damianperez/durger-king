@@ -64,7 +64,8 @@ class App extends \TelegramBot\UpdateHandler {
           Request::sendMessage([
                         'chat_id' => $update->getMessage()->getChat()->getId(),
                         'parse_mode' => 'Markdown',
-                        'text' => "Your order has been placed successfully! 🍟"
+                        'text' => 'Your order has been placed successfully! '
+                        //'text' => "Your order has been placed successfully! 🍟"
                     ]);
          Response::send(StatusCode::OK,[
                         "ok"=> true,
