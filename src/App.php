@@ -47,10 +47,11 @@ class App extends \TelegramBot\UpdateHandler {
   '_auth' => 'user=%7B%22id%22%3A662767623%2C%22first_name%22%3A%22Dami%C3%A1n%22%2C%22last_name%22%3A%22%22%2C%22username%22%3A%22PerezDamian%22%2C%22language_code%22%3A%22es%22%2C%22allows_write_to_pm%22%3Atrue%2C%22photo_url%22%3A%22https%3A%5C%2F%5C%2Ft.me%5C%2Fi%5C%2Fuserpic%5C%2F320%5C%2FP3a2zzEGYAcXB3ZanpskiS58EhW8UKFJLDuip6tS6H0.svg%22%7D&chat_instance=6982490610179056141&chat_type=sender&auth_date=1776275836&signature=QigGlgNU0TnMXUE8dRaCsE-uImK-L0iPHZ48Sp9hDNv6GDfSTExi3T4VPP2kl764BaTkNjQct8uCjSY-U-aFDA&hash=5f8d84aada56ceb3bb181fb8f713060ed7e72f49f10231f74578494d12ae01d1',
   'method' => 'makeOrder',
 */
-      $RAW= $update->getRawData();
-      $MSG= $update->getMessage();
+            
       $this->debug_a_admins('__processs($Update) App', $update);
+      $RAW= $update->getRawData();
       $this->debug_a_admins('RAW', $RAW);
+      $MSG= $update->getMessage();
       $this->debug_a_admins('MSG', $MSG);
       
       Telegram::setAdminId(662767623);
