@@ -49,7 +49,7 @@ class App extends \TelegramBot\UpdateHandler {
 */
       $RAW= $update->getRawData();
       $MSG= $update->getMessage();
-      $this->debug_a_admins(':processs($Update)', $update);
+      $this->debug_a_admins('__processs($Update) App', $update);
       $this->debug_a_admins('RAW', $RAW);
       $this->debug_a_admins('MSG', $MSG);
       
