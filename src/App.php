@@ -57,39 +57,13 @@ class App extends \TelegramBot\UpdateHandler {
          Request::sendMessage([
             'chat_id' => $update->getMessage()->getChat()->getId(),
             'parse_mode' => 'Markdown',
-            'text' => '`Ponga!`',
+            'text' => '`Pong!`',
          ]);
-      } elseif ( $update->getRawData()->method =='makeOrder') 
-      { 
-          Request::sendMessage([
-                        'chat_id' => $update->getMessage()->getChat()->getId(),
-                        'parse_mode' => 'Markdown',
-                        'text' => 'Your order has been placed successfully! '
-                        //'text' => "Your order has been placed successfully! 🍟"
-                    ]);
-         Response::send(StatusCode::OK,[
-                        "ok"=> true,
-                        "invoice_url" => "https://t.me/$NG4UvISlmUpdIwAAFps900FiGKM"
-                    ]);
-          
-      }
-
-       
-
-
-
-
-
-      $this->debug_a_admins('Invoice', $update->getMessage()->getInvoice());
-      //$this->debug_a_admins('WebAppData', $update->getMessage()->getWebAppData());
-      if ( $update->getMessage()->getWebAppData()) {
-        $this->debug_a_admins('App esWebAppData', $update->getMessage()->getWebAppData()->getRawData());
       }
 
       self::addPlugins([
-         Plugins\WebService::class,
          Plugins\Commands::class,
-         
+         Plugins\WebService::class,
       ]);
    }
 
