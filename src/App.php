@@ -47,10 +47,10 @@ class App extends \TelegramBot\UpdateHandler {
 */
             
       $this->debug_a_admins('__processs($Update) App', $update);
-      //$RAW= $update->getRawData();
-      //$this->debug_a_admins('RAW', $RAW);
-      //$MSG= $update->getMessage();
-      //$this->debug_a_admins('MSG', $MSG);
+      $RAW= $update->getRawData();
+      $this->debug_a_admins('RAW', $RAW);
+      $MSG= $update->getMessage();
+      $this->debug_a_admins('MSG', $MSG);
       
       Telegram::setAdminId(662767623);
       if ($update->getMessage()->getText() === '/ping') {
