@@ -398,9 +398,10 @@ var Cafe = {
     console.log("Data enviada", data ),
     $.ajax(Cafe.apiUrl, {
       type: 'POST',
+      
       data: $.extend(data, {_auth: authData, method: method}),
       //data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
-      dataType: 'json',
+      //dataType: 'json',
       xhrFields: {
         withCredentials: true
       },
