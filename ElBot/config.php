@@ -24,6 +24,8 @@
  */
 return [
     // Add you bot's API key and name
+    // TELEGRAM_BOT_TOKEN=963731201:AAGphSbD-uU_s93Xx1y6z2b8ULEE9YTJr88
+    // ADMIN_CHAT_ID=662767623
     'api_key'      => '963731201:AAGphSbD-uU_s93Xx1y6z2b8ULEE9YTJr88',
     'bot_username' => ' PedidosnetBot', // Without "@"
 
