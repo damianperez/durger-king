@@ -34,8 +34,8 @@ return [
 
     // When using the getUpdates method, this can be commented out
     'webhook'      => [
-        //'url' => 'https://bots.perezcompany.com.ar/durger-king/ElBot/hook.php',
-        'url' => 'https://bots.perezcompany.com.ar/durger-king/telegram',
+        'url' => 'https://bots.perezcompany.com.ar/durger-king/ElBot/hook.php',
+        //'url' => 'https://bots.perezcompany.com.ar/durger-king/telegram',
         // Use self-signed certificate
         // 'certificate'     => __DIR__ . '/path/to/your/certificate.crt',
         // Limit maximum number of connections
