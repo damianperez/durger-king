@@ -24,7 +24,8 @@ use Longman\TelegramBot\Commands\SystemCommand;
 use Longman\TelegramBot\Entities\ServerResponse;
 use Longman\TelegramBot\Request;
 
-class DurgerCommand extends SystemCommand
+//class DurgerCommand extends SystemCommand
+class DurgerCommand extends AdminCommand
 {
     /**
      * @var string
