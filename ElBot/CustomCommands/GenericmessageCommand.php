@@ -64,7 +64,11 @@ class GenericmessageCommand extends SystemCommand
     {
         $message = $this->getMessage();
 
-        $this->debug_a_admins(   'Webapp', $message );
+        $this->debug_a_admins('Vino ', $message );
+        $data = $this->getMessage()?->getWebAppData()?->getData();
+        if ($data) {
+            $this->debug_a_admins(   'Webapp', $data );
+        }
 
         /**
          * Catch and handle any service messages here.
