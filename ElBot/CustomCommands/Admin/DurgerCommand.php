@@ -61,12 +61,12 @@ class DurgerCommand extends UserCommand
         $data['user_id']  = $message->getFrom()->getId();
         $data['chat_id']  = $chat_id;
         //$this->debug_a_admins('Vino ', $message );
-        /*
+        
         $wdata = $this->getMessage()?->getWebAppData()?->getData();
         if ($wdata) {
             $this->debug_a_admins(   'Webapp', $wdata );
         }
-        */
+        
         /**
          * Catch and handle any service messages here.
          */
