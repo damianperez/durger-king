@@ -57,8 +57,7 @@ class DurgerCommand extends SystemCommand
         // Preparing response
         $data = [
             'chat_id'      => $chat_id,
-            // Remove any keyboard by default
-            'reply_markup' => Keyboard::remove(['selective' => true]),
+            
         ];
 
 
