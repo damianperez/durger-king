@@ -16,8 +16,7 @@
 
 // Your command(s) to run, pass them just like in a message (arguments supported)
 $commands = [
-    '/whoami',
-    "/echo I'm a bot!",
+    '/durger',
 ];
 
 
