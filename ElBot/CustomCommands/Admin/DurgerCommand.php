@@ -68,7 +68,7 @@ class DurgerCommand extends SystemCommand
          * Catch and handle any service messages here.
          */
         
-        $data['text'] = "Durger command executed. This is a service message, so no further action is required. en". $_ENV['REMOTE_URI'] . '  ' . __DIR__;   
+        $data['text'] = "Durger command executed. This is a service message";
         return Request::sendMessage($data);
         //return Request::emptyResponse();
     }
