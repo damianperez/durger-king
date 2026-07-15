@@ -31,6 +31,15 @@ try {
     /**
      * Check `hook.php` for configuration code to be added here.
      */
+    // Enable admin users
+    $telegram->enableAdmins($config['admins']);
+
+    // Add commands paths containing your custom commands
+    $telegram->addCommandsPaths($config['commands']['paths']);
+
+    // Enable MySQL if required
+     $telegram->enableMySql($config['mysql']);
+
 
     // Run user selected commands
     $telegram->runCommands($commands);
