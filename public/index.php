@@ -544,7 +544,7 @@
 	//"mode":"inline",		
 	*/
     Cafe.init({        
-		"apiUrl": "https://bots.perezcompany.com.ar/durger-king/ElBot/hook.php",		
+		"apiUrl": "https://bots.perezcompany.com.ar/durger-king/ElBot/durger.php",		
 		"mode":"menu",
         "userId": 0,
         "userHash": null
