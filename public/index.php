@@ -543,8 +543,6 @@
 	Cafe.init({"apiUrl":"\/cafe\/api","mode":"menu","userId":0,"userHash":null});<
 	//"mode":"inline",		
 	*/
-	
-	
     Cafe.init({        
 		"apiUrl": "https://bots.perezcompany.com.ar/durger-king/ElBot",		
 		"mode":"menu",
