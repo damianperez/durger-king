@@ -21,6 +21,7 @@
 //namespace Longman\TelegramBot\Commands\SystemCommands;
 namespace Longman\TelegramBot\Commands\UserCommands;
 use Longman\TelegramBot\Commands\SystemCommand;
+use Longman\TelegramBot\Commands\UserCommand;
 use Longman\TelegramBot\Entities\ServerResponse;
 use Longman\TelegramBot\Request;
 
