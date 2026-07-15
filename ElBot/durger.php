@@ -20,11 +20,8 @@ $commands = [
     "/echo I'm a bot!",
 ];
 
-// Load composer
-require_once __DIR__ . '/vendor/autoload.php';
 
-// Load all configuration options
-/** @var array $config */
+require_once __DIR__ . '/../vendor/autoload.php';
 $config = require __DIR__ . '/config.php';
 
 try {
