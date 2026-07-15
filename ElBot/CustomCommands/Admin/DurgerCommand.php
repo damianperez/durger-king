@@ -56,11 +56,8 @@ class DurgerCommand extends SystemCommand
         $user_id = $user->getId();
         // Preparing response
         $data = [
-            'chat_id'      => $chat_id,
-            
+            'chat_id'      => $chat_id,            
         ];
-
-
         $this->debug_a_admins('Vino ', $message );
         $wdata = $this->getMessage()?->getWebAppData()?->getData();
         if ($wdata) {
