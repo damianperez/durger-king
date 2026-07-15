@@ -18,14 +18,14 @@
  * In this service-message-related context, we can handle any incoming service-messages.
  */
 
-namespace Longman\TelegramBot\Commands\SystemCommands;
-
+//namespace Longman\TelegramBot\Commands\SystemCommands;
+namespace Longman\TelegramBot\Commands\UserCommands;
 use Longman\TelegramBot\Commands\SystemCommand;
 use Longman\TelegramBot\Entities\ServerResponse;
 use Longman\TelegramBot\Request;
 
 //class DurgerCommand extends SystemCommand
-class DurgerCommand extends AdminCommand
+class DurgerCommand extends UserCommand
 {
     /**
      * @var string
