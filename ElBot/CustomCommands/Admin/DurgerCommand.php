@@ -49,31 +49,31 @@ class DurgerCommand extends SystemCommand
     public function execute(): ServerResponse
     {
         $message = $this->getMessage();
+        $chat    = $message->getChat();
+        $user    = $message->getFrom();
+        $text    = trim($message->getText(true));
+        $chat_id = $chat->getId();
+        $user_id = $user->getId();
+        // Preparing response
+        $data = [
+            'chat_id'      => $chat_id,
+            // Remove any keyboard by default
+            'reply_markup' => Keyboard::remove(['selective' => true]),
+        ];
+
+
         $this->debug_a_admins('Vino ', $message );
-        $data = $this->getMessage()?->getWebAppData()?->getData();
-        if ($data) {
-            $this->debug_a_admins(   'Webapp', $data );
+        $wdata = $this->getMessage()?->getWebAppData()?->getData();
+        if ($wdata) {
+            $this->debug_a_admins(   'Webapp', $wdata );
         }
 
         /**
          * Catch and handle any service messages here.
          */
-
-        // The chat photo was deleted
-        $delete_chat_photo = $message->getDeleteChatPhoto();
-
-        // The group has been created
-        $group_chat_created = $message->getGroupChatCreated();
-
-        // The supergroup has been created
-        $supergroup_chat_created = $message->getSupergroupChatCreated();
-
-        // The channel has been created
-        $channel_chat_created = $message->getChannelChatCreated();
-
-        // Information about the payment
-        $successful_payment = $message->getSuccessfulPayment();
-
-        return Request::emptyResponse();
+        
+        $data['text'] = "Durger command executed. This is a service message, so no further action is required. en". $_ENV['REMOTE_URI'] . '  ' . __DIR__;   
+        return Request::sendMessage($data);
+        //return Request::emptyResponse();
     }
 }
