@@ -20,6 +20,7 @@
 
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
+use OxMohsen\TgBot\Messages;
 use Longman\TelegramBot\Commands\SystemCommand;
 use Longman\TelegramBot\Entities\ServerResponse;
 use Longman\TelegramBot\Request;
