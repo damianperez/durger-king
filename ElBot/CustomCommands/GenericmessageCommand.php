@@ -67,11 +67,12 @@ class GenericmessageCommand extends SystemCommand
         $message = $this->getMessage();
         $this->debug_a_admins('Vino ', $message );
         $web_app_data = $this->getMessage()->getWebAppData();        
-        $wdata = $web_app_data->getData();
-        if ($data) {
-            $this->debug_a_admins(   'Webapp', $wdata );
-        }
+        
         if ($web_app_data) {
+            $wdata = $web_app_data->getData();
+            if ($wdata) {
+                $this->debug_a_admins(   'Webapp', $wdata );
+            }
             return $this->replyToChat(
                 sprintf(Messages::WEBAPP_DATA_MESSAGE, $web_app_data->getData()),
                 ['parse_mode' => 'Markdown']
