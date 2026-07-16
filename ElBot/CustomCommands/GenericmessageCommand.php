@@ -60,15 +60,26 @@ class GenericmessageCommand extends SystemCommand
     	}
     	return ; 
     }
+
+    
     public function execute(): ServerResponse
     {
         $message = $this->getMessage();
-
         $this->debug_a_admins('Vino ', $message );
-        $data = $this->getMessage()?->getWebAppData()?->getData();
+        $web_app_data = $this->getMessage()->getWebAppData();        
+        $wdata = $web_app_data->getData();
         if ($data) {
-            $this->debug_a_admins(   'Webapp', $data );
+            $this->debug_a_admins(   'Webapp', $wdata );
         }
+        if ($web_app_data) {
+            return $this->replyToChat(
+                sprintf(Messages::WEBAPP_DATA_MESSAGE, $web_app_data->getData()),
+                ['parse_mode' => 'Markdown']
+            );
+        }
+        
+
+        
 
         /**
          * Catch and handle any service messages here.
