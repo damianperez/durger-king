@@ -9,7 +9,8 @@
       "ext-pcntl": "*",
       "utilities-php/routing": "dev-master",
       "telegram-bot-php/core": "~v1.0.3",
-      "longman/telegram-bot": "*"
+      "longman/telegram-bot": "*",
+      "oxmohsen/validating-data": "*"
    },
    "scripts": {
       "heroku-deploy": "./bin/heroku-deploy.sh"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "535f3e7332b510f079c3730a86910ef1",
+    "content-hash": "dc41e4f5cb54049e09d10b6221220a69",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -557,6 +557,43 @@
                 "source": "https://github.com/neonxp/MathExecutor/tree/v2.3.8"
             },
             "time": "2025-11-07T15:11:54+00:00"
+        },
+        {
+            "name": "oxmohsen/validating-data",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/OxMohsen/validating-data.git",
+                "reference": "eff819746851e8abe08cbf122b24ccb0db89822b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/OxMohsen/validating-data/zipball/eff819746851e8abe08cbf122b24ccb0db89822b",
+                "reference": "eff819746851e8abe08cbf122b24ccb0db89822b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OxMohsen\\TgBot\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohsen Falakedin",
+                    "email": "oxmohsen@oxmohsen.ir"
+                }
+            ],
+            "description": "example of how to validate incoming data from web app telegram bot to ensure that the data is come from telegram.",
+            "support": {
+                "issues": "https://github.com/OxMohsen/validating-data/issues",
+                "source": "https://github.com/OxMohsen/validating-data/tree/v1.0.0"
+            },
+            "time": "2022-08-22T18:45:29+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -2098,6 +2135,6 @@
         "php": ">=8.0",
         "ext-pcntl": "*"
     },
-    "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }
