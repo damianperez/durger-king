@@ -1,31 +1,18 @@
 <?php
-
-/**
- * This file is part of the PHP Telegram Bot example-bot package.
- * https://github.com/php-telegram-bot/example-bot/
- *
- * (c) PHP Telegram Bot Team
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-/**
- * Generic message command
- *
- * Gets executed when any type of message is sent.
- *
- * In this service-message-related context, we can handle any incoming service-messages.
- */
-
 namespace Longman\TelegramBot\Commands\SystemCommands;
 
-use OxMohsen\TgBot\Messages;
 use Longman\TelegramBot\Commands\SystemCommand;
+use Longman\TelegramBot\Conversation;
 use Longman\TelegramBot\Entities\ServerResponse;
+use Longman\TelegramBot\Exception\TelegramException;
 use Longman\TelegramBot\Request;
+use Longman\TelegramBot\Funciones;
+use OxMohsen\TgBot\Messages;
+class GenericMessageCommand extends SystemCommand
 
-class GenericmessageCommand extends SystemCommand
+
+
+
 {
     
     protected $name = 'genericmessage';
