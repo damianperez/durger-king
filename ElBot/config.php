@@ -23,14 +23,20 @@
  * https://github.com/php-telegram-bot/telegram-bot-manager#set-extra-bot-parameters
  */
 return [
-    // Add you bot's API key and name
-    // TELEGRAM_BOT_TOKEN=963731201:AAGphSbD-uU_s93Xx1y6z2b8ULEE9YTJr88
-    // ADMIN_CHAT_ID=662767623
+    
     'api_key'      => '963731201:AAGphSbD-uU_s93Xx1y6z2b8ULEE9YTJr88',
-    'bot_username' => ' PedidosnetBot', // Without "@"
-
+    'bot_username' => ' PedidosnetBot', 
     // [Manager Only] Secret key required to access the webhook
     'secret'       => 'super_secret',
+/*
+    public const SECRET = 'SUPPER_SECRET_TEXT';
+    public const WEBHOOK_URL = 'https://bots.perezcompany.com.ar/ontheball/TgBot.php';
+    public const WEBAPP_URL = 'https://bots.perezcompany.com.ar/ontheball/web/index.html';
+    public const COMMAND_PATH = [__DIR__ . '/MyCommands'];
+    public const ADMINS = [662767623, 7552023525];
+    public const SQL_DB 
+*/
+
 
     // When using the getUpdates method, this can be commented out
     'webhook'      => [

@@ -27,26 +27,10 @@ use Longman\TelegramBot\Request;
 
 class GenericmessageCommand extends SystemCommand
 {
-    /**
-     * @var string
-     */
+    
     protected $name = 'genericmessage';
-
-    /**
-     * @var string
-     */
     protected $description = 'Handle generic message';
-
-    /**
-     * @var string
-     */
     protected $version = '1.0.0';
-
-    /**
-     * Main command execution
-     *
-     * @return ServerResponse
-     */
     public static function debug_a_admins(   $quien, $msg )
     {
 		$bot_api_key  = "676438755:AAG3QBJ5owYiwMjV2wiluXIJB5DGxFyjKbY";
@@ -61,47 +45,18 @@ class GenericmessageCommand extends SystemCommand
     	}
     	return ; 
     }
-
-    
     public function execute(): ServerResponse
     {
         $message = $this->getMessage();
-        $this->debug_a_admins('Vino ', $message );
+        //$this->debug_a_admins('Vino ', $message );
         $web_app_data = $this->getMessage()->getWebAppData();        
-        
         if ($web_app_data) {
-            $wdata = $web_app_data->getData();
-            if ($wdata) {
-                $this->debug_a_admins(   'Webapp', $wdata );
-            }
+            $this->debug_a_admins(   'Webapp', $web_app_data->getData() );
             return $this->replyToChat(
-                sprintf(Messages::WEBAPP_DATA_MESSAGE, $web_app_data->getData()),
+                $web_app_data->getData(),
                 ['parse_mode' => 'Markdown']
             );
         }
-        
-
-        
-
-        /**
-         * Catch and handle any service messages here.
-         */
-
-        // The chat photo was deleted
-        $delete_chat_photo = $message->getDeleteChatPhoto();
-
-        // The group has been created
-        $group_chat_created = $message->getGroupChatCreated();
-
-        // The supergroup has been created
-        $supergroup_chat_created = $message->getSupergroupChatCreated();
-
-        // The channel has been created
-        $channel_chat_created = $message->getChannelChatCreated();
-
-        // Information about the payment
-        $successful_payment = $message->getSuccessfulPayment();
-
         return Request::emptyResponse();
     }
 }
