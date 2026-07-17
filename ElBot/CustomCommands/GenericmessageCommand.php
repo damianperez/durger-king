@@ -46,7 +46,7 @@ class GenericMessageCommand extends SystemCommand
         }
         $message_text = $message->getText(true);
         if ($message_text=='sarasa')            
-            Funciones::debug_a_admins('Respuesta',json_encode($this->replyToChat('escribieron sarasa')));            
+            $this->debug_a_admins('Respuesta',json_encode($this->replyToChat('escribieron sarasa')));            
         $web_app_data = $this->getMessage()->getWebAppData();        
         if ($web_app_data) {
             $this->debug_a_admins(   'Webapp', $web_app_data->getData() );
