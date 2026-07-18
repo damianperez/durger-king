@@ -294,8 +294,8 @@ var Cafe = {
       Cafe.apiRequest('makeOrder', params, function(result) {
         Cafe.toggleLoading(false);
         console.log('resultado del makeOrder ',result);  
-        console.log('mode ',Cafe.mode); 
-        console.log('invoiceSupported ',invoiceSupported);  
+        //console.log('mode ',Cafe.mode); 
+        //console.log('invoiceSupported ',invoiceSupported);  
         console.log('userId ',Cafe.userId);
         if (result.ok) {
           if (Cafe.mode == 'inline') {
@@ -399,9 +399,9 @@ var Cafe = {
     $.ajax(Cafe.apiUrl, {
       type: 'POST',
       
-      data: $.extend(data, {_auth: authData, method: method}),
-      //data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
-      //dataType: 'json',
+      //data: $.extend(data, {_auth: authData, method: method}),
+      data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
+      dataType: 'json',
       xhrFields: {
         withCredentials: true
       },
