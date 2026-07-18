@@ -44,7 +44,8 @@ class GenericMessageCommand extends SystemCommand
         if ($conversation->exists() && $command = $conversation->getCommand()) {
             return $this->telegram->executeCommand($command);
         }
-        /* El post de la webapp NO llega como un mensaje generico, y NO se puede obtener con getWebAppData() */
+        /* El post de la webapp NO llega como un mensaje generico, y NO se puede obtener con getWebAppData() 
+        mesage tiene  public function getType(): string pero evidentemente acá no llega */
         $this->debug_a_admins('Paso por genericmessage',json_encode($message));
         $message_text = $message->getText(true);
         if ($message_text=='sarasa')            
