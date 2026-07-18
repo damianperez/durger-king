@@ -48,6 +48,9 @@ class GenericMessageCommand extends SystemCommand
         if ($message_text=='sarasa')            
             $this->debug_a_admins('Respuesta',json_encode($this->replyToChat('escribieron sarasa')));            
         $web_app_data = $this->getMessage()->getWebAppData();        
+        $web_app_data = $this->getMessage()?->getWebAppData()?->getData();  //The Longman\TelegramBot\Entities\Message class has a getWebAppData() method that returns a WebAppData object, which has a getData() method that returns the data sent from the web app.
+
+        // check if $data isn't null and do something with it.
         if ($web_app_data) {
             $this->debug_a_admins(   'Webapp', $web_app_data->getData() );
             return $this->replyToChat(
