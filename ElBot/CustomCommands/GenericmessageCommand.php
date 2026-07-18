@@ -44,6 +44,7 @@ class GenericMessageCommand extends SystemCommand
         if ($conversation->exists() && $command = $conversation->getCommand()) {
             return $this->telegram->executeCommand($command);
         }
+        $this->debug_a_admins('Paso por genericmessage',json_encode($message));
         $message_text = $message->getText(true);
         if ($message_text=='sarasa')            
             $this->debug_a_admins('Respuesta',json_encode($this->replyToChat('escribieron sarasa')));            
