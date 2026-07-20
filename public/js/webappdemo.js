@@ -149,7 +149,7 @@ var DemoApp = {
         //console.log(jsonConvertedData); 
         console.log('enviado a ',`${basePath}/telegram`);
         console.log("Data enviada ", data ),
-        $.ajax(`${basePath}/telegram`, {
+        $.ajax(`${basePath}/durger-king/telegram`, {
             type: 'POST',
             data: $.extend(data, {_auth: authData, method: method}),
             data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
