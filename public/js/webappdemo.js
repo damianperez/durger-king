@@ -157,7 +157,7 @@ var DemoApp = {
         });
         */
        console.log(`[data enviada]: ${data} ${method} ${authData}`);
-       fetch(`${basePath}/durger-king/telegram`, {
+       fetch(`${basePath}/telegram`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json; charset=utf-8'
