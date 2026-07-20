@@ -34,4 +34,4 @@ Router::any("{$_ENV['REMOTE_URI']}", function () {
 });
 
 (new App())->resolve();
-//Response::send(StatusCode::OK, 'Z root Bot is working...');
+Response::send(StatusCode::OK);
