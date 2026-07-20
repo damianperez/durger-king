@@ -530,6 +530,7 @@
 </div>
 <script src="https://tg.dev/js/jquery.min.js"></script>
 <script src="https://tg.dev/js/tgsticker.js?27"></script>
+<script src="js/tgsticker.js?27"></script>
 <script src="js/cafe.js?version=<?php echo uniqid() ?>"></script>
 <script>
     Cafe.init({
