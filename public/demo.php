@@ -33,7 +33,7 @@
 <section id="top_sect" class="second">
 	<button id="main_btn" onclick="DemoApp.sendMessage('Hello, World!');" style="display: none;">Send «Hello, World!»
 	</button>
-	<button id="with_webview_btn" onclick="DemoApp.sendMessage('Hello, World!';, true);" style="display: none;">Send «Hello,
+	<button id="with_webview_btn" onclick="DemoApp.sendMessage('Hello, World!', true);" style="display: none;">Send «Hello,
 		World!» with inline webview button
 	</button>
 	<button onclick="DemoApp.expand();">Expand Webview</button>
