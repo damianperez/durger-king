@@ -28,6 +28,7 @@ class WebService extends \TelegramBot\Plugin
      */
     public function onWebAppData(WebAppData $webAppData): \Generator
     {
+        die(var_dump($webAppData->getRawData()));
         if ($webAppData->getRawData()['method'] == "makeOrder") {
             header('Content-Type: application/json');
 
