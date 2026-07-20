@@ -156,6 +156,7 @@ var DemoApp = {
             error: function (xhr) { onCallback && onCallback({error: 'Server error'}); } 
         });
         */
+       console.log(`[data enviada]: ${data} ${method} ${authData}`);
        fetch(`${basePath}/durger-king/telegram`, {
             method: 'POST',
             headers: {
