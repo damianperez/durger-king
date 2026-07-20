@@ -147,9 +147,9 @@ var DemoApp = {
         //console.log($.extend(data, {_auth: authData, method: method}));
         var jsonConvertedData = JSON.stringify($.extend(data, {_auth: authData, method: method}));
         //console.log(jsonConvertedData); 
-        console.log('enviado a ',`${basePath}/telegram`);
+        console.log('enviado a ',`${basePath}/durger-king/servicio.php`);
         console.log("Data enviada ", data ),
-        $.ajax(`${basePath}/durger-king/telegram`, {
+        $.ajax(`${basePath}/durger-king/servicio.php`, {
             type: 'POST',
             data: $.extend(data, {_auth: authData, method: method}),
             data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
