@@ -315,62 +315,22 @@ var Cafe = {
         clearTimeout(Cafe.statusTo);
         $(".js-status").removeClass("shown");
     },
-        apiRequest: function (method, data, onCallback) {
-        const authData = DemoApp.initData || '';
-        const basePath = window.location.pathname.split('/').slice(0, -3).join('/');
-        /*
-        $.ajax(`${basePath}/durger-king/telegram`, { 
-            type: 'POST', 
-            // 1. Convertimos el objeto a string JSON
-            data: JSON.stringify($.extend(data, {_auth: authData, method: method})), 
-            // 2. Le decimos al servidor que enviamos un JSON
-            contentType: 'application/json; charset=utf-8', 
-            dataType: 'json', 
-            xhrFields: { withCredentials: true }, 
-            success: function (result) { onCallback && onCallback(result); }, 
-            error: function (xhr) { onCallback && onCallback({error: 'Server error'}); } 
-        });
-        */
-       console.log(`[data enviada]: ${data} ${method} ${authData}`);
-       fetch(`${basePath}/telegram`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json; charset=utf-8'
+    apiRequest: function (method, data, onCallback) {
+        var authData = Telegram.WebApp.initData || "";
+        $.ajax(Cafe.apiUrl, {
+            type: "POST",
+            data: $.extend(data, { _auth: authData, method: method }),
+            dataType: "json",
+            xhrFields: {
+                withCredentials: true,
             },
-            body: JSON.stringify({ ...data, _auth: authData, method: method }),
-            credentials: 'include' 
-        })
-        .then(async response => {
-            // Debug de la respuesta básica en consola
-            console.log(`[Fetch Status]: ${response.status} ${response.statusText}`);
-            console.log(`[Fetch URL]: ${response.url}`);
-
-            // Si la respuesta no es exitosa (status fuera del rango 200-299)
-            if (!response.ok) {
-                let errorBody = '';
-                try {
-                    // Intentamos leer el cuerpo del error (puede ser JSON o texto)
-                    errorBody = await response.text();
-                    console.error('[Server Error Body]:', errorBody);
-                } catch (e) {
-                    console.error('No se pudo leer el cuerpo de la respuesta de error', e);
-                }
-                
-                // Lanzamos el error con detalles para el bloque .catch
-                throw new Error(`HTTP ${response.status}: ${errorBody || response.statusText}`);
-            }
-            
-            return response.json();
-        })
-        .then(result => {
-            console.log('[Fetch Success Data]:', result); // Debug del éxito
-            onCallback && onCallback(result);
-        })
-        .catch(error => {
-            console.error('[Fetch Catch Error]:', error.message); // Debug del fallo
-            onCallback && onCallback({ error: 'Server error', details: error.message });
+            success: function (result) {
+                onCallback && onCallback(result);
+            },
+            error: function (xhr) {
+                onCallback && onCallback({ error: "Server error" });
+            },
         });
-
     },
 };
 
