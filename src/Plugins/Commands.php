@@ -63,6 +63,12 @@ class Commands extends \TelegramBot\Plugin
                     "/help - Show this help page"
             ]);
         }
+        else {
+            yield Request::sendMessage([
+                'chat_id' => $message->getChat()->getId(),
+                'text' => "I don't understand that command. Please use /help to see the list of available commands."
+            ]);
+        }
     }
 
 }
