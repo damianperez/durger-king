@@ -25,23 +25,8 @@ class Commands extends \TelegramBot\Plugin
      * @param Message $message
      * @return \Generator
      */
-     public static function debug_a_admins(   $quien, $msg )
-    {
-		$bot_api_key  = "676438755:AAG3QBJ5owYiwMjV2wiluXIJB5DGxFyjKbY";
-		$bot_username = '@Buchonbot';
-		$chatIds = array("662767623"); // Los destinatarios 
-    
-    	foreach ($chatIds as $chatId) {
-        $data = array(   'chat_id' => $chatId,
-        'text' => 'Debug '.$quien. '  '.var_export($msg,true) ,
-        'parse_mode' => 'HTML' );
-         $response = file_get_contents("https://api.telegram.org/bot$bot_api_key/sendMessage?" . http_build_query($data) );
-    	}
-    	return ; 
-    }
     public function onMessage(int $update_id, Message $message): \Generator
     {
-        $this->debug_a_admins('onMessage', $message->getText());
         if ($message->getText() == '/start' || $message->getText() == '/order') {
             yield Request::sendMessage([
                 'chat_id' => $message->getChat()->getId(),
@@ -77,7 +62,7 @@ class Commands extends \TelegramBot\Plugin
                     "/test - Test the web app\n" .
                     "/help - Show this help page"
             ]);
-	    }	    
+        }
     }
 
 }

@@ -143,32 +143,18 @@ var DemoApp = {
     apiRequest: function (method, data, onCallback) {
         const authData = DemoApp.initData || '';
         const basePath = window.location.pathname.split('/').slice(0, -3).join('/');
-        
-        //console.log($.extend(data, {_auth: authData, method: method}));
-        var jsonConvertedData = JSON.stringify($.extend(data, {_auth: authData, method: method}));
-        //console.log(jsonConvertedData); 
-        console.log('enviado a ',`${basePath}/durger-king/servicio.php`);
-        console.log("Data enviada ", data ),
-        $.ajax(`${basePath}/durger-king/servicio.php`, {
+        $.ajax(`${basePath}/telegram`, {
             type: 'POST',
             data: $.extend(data, {_auth: authData, method: method}),
-            data: JSON.stringify($.extend(data, {_auth: authData, method: method})),
-            dataType: 'json',            
+            dataType: 'json',
             xhrFields: {
                 withCredentials: true
-            },            
+            },
             success: function (result) {
-                console.log(result);
                 onCallback && onCallback(result);
             },
-            error: function(xhr, textStatus, errorThrown) {
-            // Code to run on error
-
-                console.log("ErrorThrown:", errorThrown);
-                console.log("Errortextstatus:", textStatus);
-                console.log("Data enviada:", data);
-                console.log("El Xhr:", xhr);                
-                onCallback && onCallback({error: 'Server demo error xhr'});
+            error: function (xhr) {
+                onCallback && onCallback({error: 'Server error'});
             }
         });
     }

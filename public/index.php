@@ -531,21 +531,9 @@
 <script src="https://tg.dev/js/jquery.min.js"></script>
 <script src="https://tg.dev/js/tgsticker.js?27"></script>
 <script src="js/cafe.js?version=<?php echo uniqid() ?>"></script>
-
 <script>
-	/*
-	inline button
-		From the button, a Mini App will open with the URL specified in the button. In addition to the user's theme settings, it will receive basic user information (ID, name, username, language_code) and a unique identifier for the session, query_id, which allows messages on behalf of the user to be sent back to the bot.
-	menu button
-	inline mode
-	direct link
-
-	Cafe.init({"apiUrl":"\/cafe\/api","mode":"menu","userId":0,"userHash":null});<
-	//"mode":"inline",		
-	*/
-    Cafe.init({        
-		"apiUrl": "https://bots.perezcompany.com.ar/durger-king/ElBot/hook.php",		
-		"mode":"menu",
+    Cafe.init({
+        "apiUrl": "<?php echo $_ENV['REMOTE_PATH'] . '/telegram' ?>",
         "userId": 0,
         "userHash": null
     });

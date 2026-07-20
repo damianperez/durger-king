@@ -11,7 +11,7 @@ use Utilities\Routing\Response;
 use Utilities\Routing\Utils\StatusCode;
 
 /**
- * Class WebService 
+ * Class WebService
  *
  * The Class will handle the requests for the WebApp.
  *
@@ -22,48 +22,16 @@ use Utilities\Routing\Utils\StatusCode;
 class WebService extends \TelegramBot\Plugin
 {
 
-    public static function debug_a_admins(   $quien, $msg )
-    {
-		$bot_api_key  = "676438755:AAG3QBJ5owYiwMjV2wiluXIJB5DGxFyjKbY";
-		$bot_username = '@Buchonbot';
-		$chatIds = array("662767623"); // Los destinatarios 
-    
-    	foreach ($chatIds as $chatId) {
-        $data = array(   'chat_id' => $chatId,
-        'text' => 'Debug '.$quien. '  '.var_export($msg,true) ,
-        'parse_mode' => 'HTML' );
-         $response = file_get_contents("https://api.telegram.org/bot$bot_api_key/sendMessage?" . http_build_query($data) );
-    	}
-    	return ; 
-    }
-
-
     /**
      * @param WebAppData $webAppData
      * @return \Generator
-     * 
-     * EL invoice y el WebAppData llegan por separado, no se si es un bug o es asi, pero el invoice llega con el mensaje y 
-     * el WebAppData llega despues, 
-     * por eso los debug para ver que llega primero
-     * Esto deberia devolver el makeOrder     * 
-     *  {"ok":true,"invoice_url":"https:\/\/t.me\/$Nv6DVyQXoUjsEwAA-fIZSx-Ohn4"}
-     * Luego pasar a la pantalla de checkout. 
-     * Despues de pagar, el bot recibe el update con el WebAppData con la info del pedido, y ahi se procesa el pedido.
-     * Entonces sí manda el mensaje ""Your order has been placed successfully"
-     * 
-     *  
-     * 
-     */    
+     */
     public function onWebAppData(WebAppData $webAppData): \Generator
     {
-        $this->debug_a_admins('onWebAppData', $webAppData);
-	    //
-        // die(var_dump($webAppData));
         if ($webAppData->getRawData()['method'] == "makeOrder") {
             header('Content-Type: application/json');
 
-	    yield Request::sendMessage([
-
+            yield Request::sendMessage([
                 'chat_id' => $webAppData->getUser()->getId(),
                 'parse_mode' => ParseMode::MARKDOWN,
                 'text' => "Your order has been placed successfully! 🍟" . "\n\n" .
@@ -71,12 +39,7 @@ class WebService extends \TelegramBot\Plugin
                     "Your order will be delivered to you in 30 minutes. 🚚",
             ]);
 
-            Response::send(StatusCode::OK,[
-                        "ok"=> true,
-                        "invoice_url" => "https://t.me/$NG4UvISlmUpdIwAAFps900FiGKM"
-                    ]);
-            //public static function send(int $statusCode, string|array $body = []): void
-            
+            Response::send(StatusCode::OK);
         }
 
         if ($webAppData->getRawData()['method'] == "checkInitData") {
@@ -87,7 +50,7 @@ class WebService extends \TelegramBot\Plugin
         if ($webAppData->getRawData()['method'] == "sendMessage") {
             header('Content-Type: application/json');
 
-            yield   Request::sendMessage([
+            yield Request::sendMessage([
                 'chat_id' => $webAppData->getUser()->getId(),
                 'parse_mode' => ParseMode::MARKDOWN,
                 'text' => "Hello World!",
@@ -101,7 +64,6 @@ class WebService extends \TelegramBot\Plugin
             ]);
 
             Response::send(StatusCode::OK);
-            //Response::send(StatusCode::OK);
         }
     }
 
