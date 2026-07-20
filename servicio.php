@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-//use ShahradElahi\DurgerKing\App;
+use ShahradElahi\DurgerKing\App;
 use Utilities\Routing\Response;
 use Utilities\Routing\Router;
 use Utilities\Routing\Utils\StatusCode;
