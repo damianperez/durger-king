@@ -8,7 +8,7 @@ use Utilities\Routing\Utils\StatusCode;
 require_once __DIR__ . '/vendor/autoload.php';
 
 ini_set('display_errors', '1');
-error_reporting(E_ALL);
+error_reporting(E_ERROR);
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
