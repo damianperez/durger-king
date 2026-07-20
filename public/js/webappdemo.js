@@ -143,19 +143,16 @@ var DemoApp = {
     apiRequest: function (method, data, onCallback) {
         const authData = DemoApp.initData || '';
         const basePath = window.location.pathname.split('/').slice(0, -3).join('/');
-        $.ajax(`${basePath}/durger-king/telegram`, {
-            type: 'POST',
-            data: $.extend(data, {_auth: authData, method: method}),
-            dataType: 'json',
-            xhrFields: {
-                withCredentials: true
-            },
-            success: function (result) {
-                onCallback && onCallback(result);
-            },
-            error: function (xhr) {
-                onCallback && onCallback({error: 'Server error'});
-            }
+        $.ajax(`${basePath}/durger-king/telegram`, { 
+            type: 'POST', 
+            // 1. Convertimos el objeto a string JSON
+            data: JSON.stringify($.extend(data, {_auth: authData, method: method})), 
+            // 2. Le decimos al servidor que enviamos un JSON
+            contentType: 'application/json; charset=utf-8', 
+            dataType: 'json', 
+            xhrFields: { withCredentials: true }, 
+            success: function (result) { onCallback && onCallback(result); }, 
+            error: function (xhr) { onCallback && onCallback({error: 'Server error'}); } 
         });
     }
 };
