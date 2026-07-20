@@ -157,6 +157,7 @@ var DemoApp = {
     }
 };
 
+
 var DemoAppMenu = {
     init: function () {
         DemoApp.init();
