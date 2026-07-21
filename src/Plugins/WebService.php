@@ -29,7 +29,9 @@ class WebService extends \TelegramBot\Plugin
     public function onWebAppData(WebAppData $webAppData): \Generator
     {
         //die(var_dump($webAppData->getRawData()));
-        //die('not working');
+        
+        
+        die('not working');
         if ($webAppData->getRawData()['method'] == "makeOrder") {
             header('Content-Type: application/json');
 
@@ -41,12 +43,16 @@ class WebService extends \TelegramBot\Plugin
                     "Your order will be delivered to you in 30 minutes. 🚚",
             ]);
 
-            Response::send(StatusCode::OK);
+            Response::send(StatusCode::OK, [
+                'description' => "Your order has been placed successfully! 🍟",
+            ]);
         }
 
         if ($webAppData->getRawData()['method'] == "checkInitData") {
             header('Content-Type: application/json');
-            Response::send(StatusCode::OK);
+            Response::send(StatusCode::OK, [
+                'description' => "Chequeo ok...",
+            ]);
         }
 
         if ($webAppData->getRawData()['method'] == "sendMessage") {
@@ -65,7 +71,9 @@ class WebService extends \TelegramBot\Plugin
                 ])
             ]);
 
-            Response::send(StatusCode::OK);
+            Response::send(StatusCode::OK, [
+                'description' => "Message sent successfully!",
+            ]);
         }
     }
 
