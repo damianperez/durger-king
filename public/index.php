@@ -539,7 +539,7 @@
     
     console.log(`[data enviada]:`, data, method, authData);
     
-    fetch(`${basePath}/telegram`, {
+    fetch(`${basePath}/durger-king/telegram`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json; charset=utf-8'
