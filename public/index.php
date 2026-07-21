@@ -575,6 +575,15 @@
 };
 </script>
 <!--
+El makeorder decuelve
+{"ok":true,"invoice_url":"https:\/\/t.me\/$mRyUJVtrAUvFGAAAOoPWvKpAlPE"}
+en tg original, pero en mi servidor devuelve
+{
+    "ok": true,
+    "elapsed_time": "1ms"
+}
+	-->
+<!--
 <script src="js/tgsticker.js?27"></script>
 <script src="js/cafe.js?version=<?php echo uniqid() ?>"></script>
 -->
@@ -582,6 +591,7 @@
     Cafe.init({
         "apiUrl": "<?php echo $_ENV['REMOTE_PATH'] . '/telegram' ?>",
         "userId": 0,
+		"mode": "menu", // "menu" or "order"
         "userHash": null
     });
 </script>
