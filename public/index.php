@@ -531,6 +531,49 @@
 <script src="https://tg.dev/js/jquery.min.js"></script>
 <script src="https://tg.dev/js/tgsticker.js?32"></script>
 <script src="https://tg.dev/js/cafe.js?version=<?php echo uniqid() ?>"></script> 
+<script>
+	Cafe.apiRequest = function (method, data, onCallback) {
+    // Corregido: Se usa la API oficial de Telegram en lugar de DemoApp
+    const authData = Telegram.WebApp.initData || '';
+    const basePath = window.location.pathname.split('/').slice(0, -3).join('/');
+    
+    console.log(`[data enviada]:`, data, method, authData);
+    
+    fetch(`${basePath}/telegram`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json; charset=utf-8'
+        },
+        body: JSON.stringify({ ...data, _auth: authData, method: method }),
+        credentials: 'include' 
+    })
+    .then(async response => {
+        console.log(`[Fetch Status]: ${response.status} ${response.statusText}`);
+        console.log(`[Fetch URL]: ${response.url}`);
+
+        if (!response.ok) {
+            let errorBody = '';
+            try {
+                errorBody = await response.text();
+                console.error('[Server Error Body]:', errorBody);
+            } catch (e) {
+                console.error('No se pudo leer el cuerpo de la respuesta de error', e);
+            }
+            throw new Error(`HTTP ${response.status}: ${errorBody || response.statusText}`);
+        }
+        
+        return response.json();
+    })
+    .then(result => {
+        console.log('[Fetch Success Data]:', result);
+        onCallback && onCallback(result);
+    })
+    .catch(error => {
+        console.error('[Fetch Catch Error]:', error.message);
+        onCallback && onCallback({ error: 'Server error', details: error.message });
+    });
+};
+</script>
 <!--
 <script src="js/tgsticker.js?27"></script>
 <script src="js/cafe.js?version=<?php echo uniqid() ?>"></script>
