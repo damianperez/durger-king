@@ -59,7 +59,7 @@ class Commands extends \TelegramBot\Plugin
                 'text' => "Please tap ".$_ENV['REMOTE_PATH']."/prueba1/index.php  to open the web app!",
                 'reply_markup' => InlineKeyboard::make()->setKeyboard([
                     [
-                        InlineKeyboardButton::make('Prueba1')->setWebApp($_ENV['REMOTE_PATH'] . '/prueba1/index.php'),
+                        InlineKeyboardButton::make('Prueba1')->setWebApp($_ENV['REMOTE_PATH'] . '/prueba1/index.html'),
                     ]
                 ])
             ]);
