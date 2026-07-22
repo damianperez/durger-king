@@ -7,31 +7,24 @@ use Utilities\Routing\Utils\StatusCode;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-
-
-
-ini_set('display_errors', '0');
+ini_set('display_errors', '1');
 error_reporting(E_ERROR);
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-
-
 Router::resource("{$_ENV['REMOTE_URI']}/public", __DIR__ . '/public');
-
-Router::resource("{$_ENV['REMOTE_URI']}/ElBot", __DIR__ . '/ElBot');
-
 
 Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
     (new App())->resolve();
 
-    Response::send(StatusCode::OK, 'Z /telegram Bot is working...');
+    Response::send(StatusCode::OK, [
+            'description' => "Bot is working...",
+            "ok" => true,
+            "invoice_url" => "https://t.me/$mRyUJVtrAUvFGAAAOoPWvKpAlPE"
+        ]); //, 'Bot is working...');    
 });
 
 Router::any("{$_ENV['REMOTE_URI']}", function () {
-    
     echo "Ready to serve...";
 });
-
-(new App())->resolve();
-Response::send(StatusCode::OK);
