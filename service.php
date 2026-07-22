@@ -17,6 +17,11 @@ Router::resource("{$_ENV['REMOTE_URI']}/public", __DIR__ . '/public');
 
 Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
     (new App())->resolve();
+    Request::sendMessage([
+            'chat_id' => $update->getMessage()->getChat()->getId(),
+            'parse_mode' => 'Markdown',
+            'text' => '`Pong!`',
+         ]);
     Response::send(StatusCode::OK, [
             'description' => "Bot is working...",
             "ok" => true,
