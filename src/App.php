@@ -34,6 +34,11 @@ class App extends \TelegramBot\UpdateHandler {
             'text' => '`Pong!`',
          ]);
       }
+      Request::sendMessage([
+            'chat_id' => $update->getMessage()->getChat()->getId(),
+            'parse_mode' => 'Markdown',
+            'text' => '`App Bot is working...`',
+         ]);
 
       self::addPlugins([
          Plugins\Commands::class,
