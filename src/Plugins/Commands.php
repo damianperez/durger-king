@@ -56,10 +56,10 @@ class Commands extends \TelegramBot\Plugin
             yield Request::sendMessage([
                 'chat_id' => $message->getChat()->getId(),
                 'parse_mode' => ParseMode::MARKDOWN,
-                'text' => "Please tap the button below to open the web app!",
+                'text' => "Please tap ".$_ENV['REMOTE_PATH']."/prueba1/index.php  to open the web app!",
                 'reply_markup' => InlineKeyboard::make()->setKeyboard([
                     [
-                        InlineKeyboardButton::make('Prueba1')->setWebApp($_ENV['REMOTE_PATH'] . '/prueba1/index.html'),
+                        InlineKeyboardButton::make('Prueba1')->setWebApp($_ENV['REMOTE_PATH'] . '/prueba1/index.php'),
                     ]
                 ])
             ]);
