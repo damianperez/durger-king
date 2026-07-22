@@ -19,6 +19,8 @@ Router::any("{$_ENV['REMOTE_URI']}/telegram", function () {
     (new App())->resolve();
     Response::send(StatusCode::OK, [
             'description' => "Bot is working...",
+            "ok" => true,
+            "invoice_url" => "https://t.me/$mRyUJVtrAUvFGAAAOoPWvKpAlPE"
         ]); //, 'Bot is working...');    
 });
 
