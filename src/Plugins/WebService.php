@@ -99,7 +99,6 @@ class WebService extends \TelegramBot\Plugin
         }
         return $order_text;
     }
-
     /**
      * The available items in the store.
      *
