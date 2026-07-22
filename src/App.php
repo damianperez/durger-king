@@ -41,6 +41,8 @@ class App extends \TelegramBot\UpdateHandler {
             'text' => '`App Bot is working...`',
          ]);
       */
+         $wdata = $update->getMessage()?->getWebAppData()?->getData();
+        die('wdata: '.var_export($wdata,true));
       self::addPlugins([
          Plugins\Commands::class,
          Plugins\WebService::class,
