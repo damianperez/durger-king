@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Telegram Mini App</title>
     <!-- SDK Oficial de Telegram -->
-    <script src="https://telegram.org"></script>
+    <!-- <script src="https://telegram.org"></script> -->
+    <script src="https://tg.dev/js/telegram-web-app.js?25"></script>
+	<script>
+        function setThemeClass() {
+            document.documentElement.className = Telegram.WebApp.colorScheme;
+        }
+
+        Telegram.WebApp.onEvent('themeChanged', setThemeClass);
+        setThemeClass();
+
+	</script>
     <style>
         body {
             font-family: Arial, sans-serif;
