@@ -34,6 +34,8 @@ class App extends \TelegramBot\UpdateHandler {
             'text' => '`Pong!`',
          ]);
       }
+
+      
       /*
       Request::sendMessage([
             'chat_id' => $update->getMessage()->getChat()->getId(),
@@ -41,7 +43,7 @@ class App extends \TelegramBot\UpdateHandler {
             'text' => '`App Bot is working...`',
          ]);
       */
-        $wdata = $update->getMessage()?->getWebAppData()?->getData();
+      //  $wdata = $update->getMessage()?->getWebAppData()?->getData();
       //  die('wdata: '.var_export($wdata,true));
       self::addPlugins([
          Plugins\Commands::class,
