@@ -29,6 +29,7 @@ try {
      * REMEMBER to define the URL to your hook.php file in:
      * config.php: ['webhook']['url'] => 'https://your-domain/path/to/hook.php'
      */
+    https://api.telegram.org/bot963731201:AAGphSbD-uU_s93Xx1y6z2b8ULEE9YTJr88/setWebhook?url=https://bots.perezcompany.com.ar/ontheball/bot.php
 
     // Set the webhook
     //$result = $telegram->setWebhook('https://bots.perezcompany.com.ar/durger-king/telegram');
