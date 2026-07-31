@@ -31,7 +31,8 @@ try {
      */
 
     // Set the webhook
-    $result = $telegram->setWebhook('https://bots.perezcompany.com.ar/durger-king/telegram');
+    //$result = $telegram->setWebhook('https://bots.perezcompany.com.ar/durger-king/telegram');
+    $result = $telegram->setWebhook('https://bots.perezcompany.com.ar/ontheball/bot.php');
 
     // To use a self-signed certificate, use this line instead
     // $result = $telegram->setWebhook($config['webhook']['url'], ['certificate' => $config['webhook']['certificate']]);
