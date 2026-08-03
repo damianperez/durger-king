@@ -544,7 +544,7 @@
     a.href = url;	
     if (a.protocol != 'http:' &&
         a.protocol != 'https:' ||
-        !Telegram.WebApp.isTmeHostname(a.hostname) ||
+        !isTmeHostname(a.hostname) ||
         !(match = a.pathname.match(/^\/(\$|durger\/)([A-Za-z0-9\-_=]+)$/)) ||
         !(slug = match[2])) {
       console.error('[Telegram.WebApp] Invoice url is invalid', url);
