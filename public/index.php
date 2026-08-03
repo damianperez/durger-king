@@ -589,7 +589,8 @@ en tg original, pero en mi servidor devuelve
 -->
 <script>
     Cafe.init({
-        "apiUrl": "<?php echo $_ENV['REMOTE_PATH'] . '/telegram' ?>",
+        //"apiUrl": "<?php echo $_ENV['REMOTE_PATH'] . '/telegram' ?>",
+		"apiUrl": 'https://bots.perezcompany.com.ar/ontheball/hook_durger.php',
         "userId": 0,
 		"mode": "menu", // "menu" or "order"
         "userHash": null
