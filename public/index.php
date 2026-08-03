@@ -542,7 +542,7 @@
       console.error('[Telegram.WebApp] Invoice url is invalid', url);
       throw Error('WebAppInvoiceUrlInvalid');
     }
-    if (!versionAtLeast('6.1')) {
+    if (!versionAtLeast('1.1')) {
       console.error('[Telegram.WebApp] Method openInvoice is not supported in version ' + webAppVersion);
       throw Error('WebAppMethodUnsupported');
     }
@@ -596,7 +596,7 @@
     })
     .catch(error => {
         console.error('[Fetch Catch Error]:', error.message);
-        onCallback && onCallback({ error: 'Server error', details: error.message });
+        onCallback && onCallback({ error: 'Server error '+error.message, details: error.message });
     });
 };
 </script>
