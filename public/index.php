@@ -537,6 +537,8 @@
     hostname = hostname.toString().toLowerCase();
     return hostname == 'bots.perezcompany.com.ar' || hostname == 'perezcompany.com.ar';
   }
+</script>
+<script>
   Telegram.WebApp.openInvoice = function (url, callback) {
     var a = document.createElement('A'), match, slug;
     a.href = url;	
@@ -564,8 +566,8 @@
     };
     WebView.postEvent('web_app_open_invoice', false, {slug: slug});
   };
-
-
+  </script>
+<script>
 	Cafe.apiRequest = function (method, data, onCallback) {
     // Corregido: Se usa la API oficial de Telegram en lugar de DemoApp
     const authData = Telegram.WebApp.initData || '';
