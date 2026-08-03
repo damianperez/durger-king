@@ -539,14 +539,14 @@
     
     console.log(`[data enviada]:`, data, method, authData);
     
-    fetch(`${basePath}/durger-king/telegram`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json; charset=utf-8'
-        },
-        body: JSON.stringify({ ...data, _auth: authData, method: method }),
-        credentials: 'include' 
-    })
+	fetch('https://bots.perezcompany.com.ar/ontheball/bot.php', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json; charset=utf-8'
+		},
+		body: JSON.stringify({ ...data, _auth: authData, method: method }),
+		credentials: 'include' 
+	})    
     .then(async response => {
         console.log(`[Fetch Status]: ${response.status} ${response.statusText}`);
         console.log(`[Fetch URL]: ${response.url}`);
