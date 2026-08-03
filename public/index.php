@@ -532,6 +532,32 @@
 <script src="https://tg.dev/js/tgsticker.js?32"></script>
 <script src="https://tg.dev/js/cafe.js?version=<?php echo uniqid() ?>"></script> 
 <script>
+	<-- Reeemplazo openinvoice para que funcione con mi servidor -->
+  WebApp.openInvoice = function (url, callback) {
+    var a = document.createElement('A'), match, slug;
+    a.href = url;
+    if (a.protocol != 'http:' &&
+        a.protocol != 'https:' 
+    ) {
+      console.error('[Telegram.WebApp] Invoice url is invalid', url);
+      throw Error('WebAppInvoiceUrlInvalid');
+    }
+    if (!versionAtLeast('6.1')) {
+      console.error('[Telegram.WebApp] Method openInvoice is not supported in version ' + webAppVersion);
+      throw Error('WebAppMethodUnsupported');
+    }
+    if (webAppInvoices[slug]) {
+      console.error('[Telegram.WebApp] Invoice is already opened');
+      throw Error('WebAppInvoiceOpened');
+    }
+    webAppInvoices[slug] = {
+      url: url,
+      callback: callback
+    };
+    WebView.postEvent('web_app_open_invoice', false, {slug: slug});
+  };
+
+
 	Cafe.apiRequest = function (method, data, onCallback) {
     // Corregido: Se usa la API oficial de Telegram en lugar de DemoApp
     const authData = Telegram.WebApp.initData || '';
