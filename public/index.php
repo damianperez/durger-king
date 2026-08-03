@@ -542,6 +542,7 @@
   Telegram.WebApp.openInvoice = function (url, callback) {
     var a = document.createElement('A'), match, slug;
     a.href = url;	
+	/*
     if (a.protocol != 'http:' &&
         a.protocol != 'https:' ||
         !isTmeHostname(a.hostname) ||
@@ -554,7 +555,8 @@
       console.error('[Telegram.WebApp] Method openInvoice is not supported in version ' + Telegram.WebApp.version);
       throw Error('WebAppMethodUnsupported');
     }
-	/* Ver el tema del slug, 
+	 Ver el tema del slug, 
+
     if (Telegram.WebApp.webAppInvoices[slug]) {
       console.error('[Telegram.WebApp] Invoice is already opened');
       throw Error('WebAppInvoiceOpened');
