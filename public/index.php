@@ -536,7 +536,7 @@
   Telegram.WebApp.openInvoice = function (url, callback) {
     var a = document.createElement('A'), match, slug;
     a.href = url;
-	slug = 'durger-' + Math.random().toString(36).substring(2, 15);
+	slug = 999;
     if (a.protocol != 'http:' &&
         a.protocol != 'https:' 
     ) {
