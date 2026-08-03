@@ -539,7 +539,7 @@
     
     console.log(`[data enviada]:`, data, method, authData);
     
-	fetch('https://bots.perezcompany.com.ar/ontheball/bot.php', {
+	fetch('https://bots.perezcompany.com.ar/ontheball/hook_durger.php', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json; charset=utf-8'
