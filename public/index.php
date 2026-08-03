@@ -546,11 +546,11 @@
       console.error('[Telegram.WebApp] Method openInvoice is not supported in version ' + Telegram.WebApp.version);
       throw Error('WebAppMethodUnsupported');
     }
-    if (webAppInvoices[slug]) {
+    if (Telegram.WebApp.webAppInvoices[slug]) {
       console.error('[Telegram.WebApp] Invoice is already opened');
       throw Error('WebAppInvoiceOpened');
     }
-    webAppInvoices[slug] = {
+    Telegram.WebApp.webAppInvoices[slug] = {
       url: url,
       callback: callback
     };
