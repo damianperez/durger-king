@@ -533,7 +533,7 @@
 <script src="https://tg.dev/js/cafe.js?version=<?php echo uniqid() ?>"></script> 
 <script>
 	//Reeemplazo openinvoice para que funcione con mi servidor 
-	Telegram.WebApp.isTmeHostname(hostname) = function (hostname) {
+	isTmeHostname = function (hostname) {
     hostname = hostname.toString().toLowerCase();
     return hostname == 'bots.perezcompany.com.ar' || hostname == 'perezcompany.com.ar';
   }
