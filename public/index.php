@@ -586,10 +586,13 @@ en tg original, pero en mi servidor devuelve
 <!--
 <script src="js/tgsticker.js?27"></script>
 <script src="js/cafe.js?version=<?php echo uniqid() ?>"></script>
+
+
+ //"apiUrl": "<?php echo $_ENV['REMOTE_PATH'] . '/telegram' ?>",
 -->
 <script>
     Cafe.init({
-        //"apiUrl": "<?php echo $_ENV['REMOTE_PATH'] . '/telegram' ?>",
+       
 		"apiUrl": 'https://bots.perezcompany.com.ar/ontheball/hook_durger.php',
         "userId": 0,
 		"mode": "menu", // "menu" or "order"
