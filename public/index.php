@@ -533,13 +533,19 @@
 <script src="https://tg.dev/js/cafe.js?version=<?php echo uniqid() ?>"></script> 
 <script>
 	//Reeemplazo openinvoice para que funcione con mi servidor 
+	Telegram.WebApp.isTmeHostname(hostname) = function (hostname) {
+    hostname = hostname.toString().toLowerCase();
+    return hostname == 'bots.perezcompany.com.ar' || hostname == 'perezcompany.com.ar';
+  }
   Telegram.WebApp.openInvoice = function (url, callback) {
     var a = document.createElement('A'), match, slug;
     a.href = url;
-	slug = 999;
+	
     if (a.protocol != 'http:' &&
-        a.protocol != 'https:' 
-    ) {
+        a.protocol != 'https:' ||
+        !Telegram.WebApp.isTmeHostname(a.hostname) ||
+        !(match = a.pathname.match(/^\/(\$|durger\/)([A-Za-z0-9\-_=]+)$/)) ||
+        !(slug = match[2])) {
       console.error('[Telegram.WebApp] Invoice url is invalid', url);
       throw Error('WebAppInvoiceUrlInvalid');
     }
