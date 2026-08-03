@@ -331,6 +331,8 @@ var Cafe = {
             error: function (xhr) { onCallback && onCallback({error: 'Server error'}); } 
         });
         */
+       console.log(`[apiRequest] ${method} ${JSON.stringify(data)} ${authData}`);
+       console.log(`[basePath]: ${basePath}`);
        console.log(`[data enviada]: ${data} ${method} ${authData}`);
        fetch(`${basePath}/telegram`, {
             method: 'POST',
