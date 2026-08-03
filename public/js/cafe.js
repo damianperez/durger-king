@@ -332,9 +332,10 @@ var Cafe = {
         });
         */
        console.log(`[apiRequest] ${method} ${JSON.stringify(data)} ${authData}`);
-       console.log(`[basePath]: ${basePath}`);
+       console.log(`el fetch: ${basePath}/../ontheball/hook_durger.php`);
        console.log(`[data enviada]: ${data} ${method} ${authData}`);
-       fetch(`${basePath}/telegram`, {
+       //fetch(`${basePath}/telegram`, {
+       fetch(`${basePath}/../ontheball/hook_durger.php`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json; charset=utf-8'
