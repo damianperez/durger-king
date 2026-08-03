@@ -532,7 +532,7 @@
 <script src="https://tg.dev/js/tgsticker.js?32"></script>
 <script src="https://tg.dev/js/cafe.js?version=<?php echo uniqid() ?>"></script> 
 <script>
-	<-- Reeemplazo openinvoice para que funcione con mi servidor -->
+	//Reeemplazo openinvoice para que funcione con mi servidor 
   WebApp.openInvoice = function (url, callback) {
     var a = document.createElement('A'), match, slug;
     a.href = url;
