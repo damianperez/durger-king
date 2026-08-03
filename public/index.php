@@ -539,8 +539,7 @@
   }
   Telegram.WebApp.openInvoice = function (url, callback) {
     var a = document.createElement('A'), match, slug;
-    a.href = url;
-	
+    a.href = url;	
     if (a.protocol != 'http:' &&
         a.protocol != 'https:' ||
         !Telegram.WebApp.isTmeHostname(a.hostname) ||
