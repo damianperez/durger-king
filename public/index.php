@@ -542,8 +542,8 @@
       console.error('[Telegram.WebApp] Invoice url is invalid', url);
       throw Error('WebAppInvoiceUrlInvalid');
     }
-    if (!isVersionAtLeast('1.1')) {
-      console.error('[Telegram.WebApp] Method openInvoice is not supported in version ' + webAppVersion);
+    if (!Telegram.WebApp.isVersionAtLeast('1.1')) {
+      console.error('[Telegram.WebApp] Method openInvoice is not supported in version ' + Telegram.WebApp.version);
       throw Error('WebAppMethodUnsupported');
     }
     if (webAppInvoices[slug]) {
