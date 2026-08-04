@@ -623,12 +623,14 @@ en tg original, pero en mi servidor devuelve
 	-->
 <!--
  //"apiUrl": "<?php echo $_ENV['REMOTE_PATH'] . '/telegram' ?>",
+ inline : vuelve al bot con @Pedidosnetbot #999  
+ link:
 -->
 <script>
     Cafe.init({       
 		"apiUrl": 'https://bots.perezcompany.com.ar/ontheball/hook_durger.php',
         "userId": 0,
-		"mode": "inline", // "menu" or "order" 'inline''link'
+		"mode": "link", // "menu" or "order" 'inline''link'
         "userHash": null
     });
 </script>
