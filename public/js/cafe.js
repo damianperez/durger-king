@@ -297,6 +297,8 @@ var Cafe = {
             Telegram.WebApp.switchInlineQuery('#' + result.order_id);
           } else if (Cafe.mode == 'link') {
             Telegram.WebApp.switchInlineQuery('#' + result.order_id, ['users', 'groups']);
+          } else if (Cafe.mode == 'pedidosnet') {
+            alert('Order has been created. Please check your Telegram messages for the order details.');
           } else if (invoiceSupported) {
             Telegram.WebApp.openInvoice(result.invoice_url, function(status) {
               if (status == 'paid') {

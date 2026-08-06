@@ -631,7 +631,7 @@ en tg original, pero en mi servidor devuelve
     Cafe.init({       
 		"apiUrl": 'https://bots.perezcompany.com.ar/ontheball/hook_durger.php',
         "userId": 0,
-		"mode": "order", // "menu" or "order" 'inline''link'
+		"mode": "pedidosnet", // "menu" or "order" 'inline''link'
         "userHash": null
     });
 </script>
