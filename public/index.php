@@ -47,7 +47,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="cafe-item js-item" data-item-id="2" data-item-price="1490">
+	<div class="cafe-item js-item" data-item-id="2" data-item-price="149">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
@@ -71,7 +71,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="cafe-item js-item" data-item-id="3" data-item-price="3490">
+	<div class="cafe-item js-item" data-item-id="3" data-item-price="349">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
@@ -95,7 +95,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="cafe-item js-item" data-item-id="4" data-item-price="3990">
+	<div class="cafe-item js-item" data-item-id="4" data-item-price="399">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
@@ -119,7 +119,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="cafe-item js-item" data-item-id="5" data-item-price="7990">
+	<div class="cafe-item js-item" data-item-id="5" data-item-price="799">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
@@ -143,7 +143,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="cafe-item js-item" data-item-id="6" data-item-price="1490">
+	<div class="cafe-item js-item" data-item-id="6" data-item-price="149">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
@@ -167,7 +167,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="cafe-item js-item" data-item-id="7" data-item-price="1990">
+	<div class="cafe-item js-item" data-item-id="7" data-item-price="199">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
@@ -191,7 +191,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="cafe-item js-item" data-item-id="8" data-item-price="1490">
+	<div class="cafe-item js-item" data-item-id="8" data-item-price="149">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
@@ -215,7 +215,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="cafe-item js-item" data-item-id="9" data-item-price="10990">
+	<div class="cafe-item js-item" data-item-id="9" data-item-price="1099">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
@@ -239,7 +239,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="cafe-item js-item" data-item-id="10" data-item-price="5990">
+	<div class="cafe-item js-item" data-item-id="10" data-item-price="599">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
@@ -263,7 +263,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="cafe-item js-item" data-item-id="11" data-item-price="3990">
+	<div class="cafe-item js-item" data-item-id="11" data-item-price="399">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
@@ -287,7 +287,7 @@
 			</button>
 		</div>
 	</div>
-	<div class="cafe-item js-item" data-item-id="12" data-item-price="7990">
+	<div class="cafe-item js-item" data-item-id="12" data-item-price="799">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
