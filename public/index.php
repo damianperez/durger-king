@@ -23,7 +23,7 @@
 </head>
 <body>
 <section class="cafe-page cafe-items">
-	<div class="cafe-item js-item" data-item-id="1" data-item-price="4990">
+	<div class="cafe-item js-item" data-item-id="1" data-item-price="499">
 		<div class="cafe-item-counter js-item-counter">1</div>
 		<div class="cafe-item-photo">
 			<picture class="cafe-item-lottie js-item-lottie">
