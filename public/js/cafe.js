@@ -19,10 +19,11 @@ var Cafe = {
     var starsSupported = Telegram.WebApp.isVersionAtLeast('7.4');
     $('body').toggleClass('stars-supported', starsSupported).show();
     
+    
     if (Telegram.WebApp.initDataUnsafe ||
-         Telegram.WebApp.initDataUnsafe.chat) 
+         Telegram.WebApp.initDataUnsafe.user ) 
       {
-      const chatId = Telegram.WebApp.initDataUnsafe.chat.id;
+      const chatId = Telegram.WebApp.initDataUnsafe.user.id;
       const chatType = Telegram.WebApp.initDataUnsafe.chat.type; // "group", "supergroup", or "channel"
       console.log("Chat ID:", chatId);
     } else {
