@@ -298,7 +298,8 @@ var Cafe = {
           } else if (Cafe.mode == 'link') {
             Telegram.WebApp.switchInlineQuery('#' + result.order_id, ['users', 'groups']);
           } else if (Cafe.mode == 'pedidosnet') {
-            alert(result.respuesta+'\nOrder'+ result.order_id +' has been created.\n'+ 'Please check your Telegram messages for the order details.');
+            alert(result.respuesta+'\nOrder '+ result.order_id +' has been created.\n'+ 'Please check your Telegram messages for the order details.');
+            Telegram.WebApp.close();
           } else if (invoiceSupported) {
             Telegram.WebApp.openInvoice(result.invoice_url, function(status) {
               if (status == 'paid') {
