@@ -23,9 +23,9 @@ var Cafe = {
     if (Telegram.WebApp.initDataUnsafe ||
          Telegram.WebApp.initDataUnsafe.user ) 
       {
-      const chatId = Telegram.WebApp.initDataUnsafe.user.id;
-      const chatType = Telegram.WebApp.initDataUnsafe.chat.type; // "group", "supergroup", or "channel"
-      console.log("Chat ID:", chatId);
+      const userId = Telegram.WebApp.initDataUnsafe.user.id;    
+      Cafe.userId = userId;  
+      console.log("User ID:", userId);
     } else {
       console.log("No group chat context found in initData.");
     }
