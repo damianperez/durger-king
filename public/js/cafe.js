@@ -18,9 +18,12 @@ var Cafe = {
     Cafe.initLotties();
     var starsSupported = Telegram.WebApp.isVersionAtLeast('7.4');
     $('body').toggleClass('stars-supported', starsSupported).show();
-    if (initDataUnsafe && initDataUnsafe.chat) {
-      const chatId = initDataUnsafe.chat.id;
-      const chatType = initDataUnsafe.chat.type; // "group", "supergroup", or "channel"
+    
+    if (Telegram.WebApp.initDataUnsafe ||
+         Telegram.WebApp.initDataUnsafe.chat) 
+      {
+      const chatId = Telegram.WebApp.initDataUnsafe.chat.id;
+      const chatType = Telegram.WebApp.initDataUnsafe.chat.type; // "group", "supergroup", or "channel"
       console.log("Chat ID:", chatId);
     } else {
       console.log("No group chat context found in initData.");
